@@ -1,0 +1,14 @@
+theme/bower_components/bootstrap/Gruntfile.js
+theme/bower_components/bootstrap/LICENSE
+theme/bower_components/bootstrap/README.md
+theme/bower_components/bootstrap/bower.json
+theme/bower_components/bootstrap/fonts/
+theme/bower_components/bootstrap/grunt/
+theme/bower_components/bootstrap/js/
+theme/bower_components/bootstrap/less/
+theme/bower_components/bootstrap/package.json
+theme/bower_components/jquery/MIT-LICENSE.txt
+theme/bower_components/jquery/bower.json
+theme/bower_components/jquery/src/
+.*
+*~*
