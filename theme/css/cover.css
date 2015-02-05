@@ -85,6 +85,7 @@ color: #e35d21;
 
 .lead {
     margin-bottom: 3px;
+    font-weight: 600;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -134,7 +135,7 @@ color: #e35d21;
   padding-right: 0;
   padding-left: 0;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   color: #e35d21; /* IE8 proofing */
   color: rgba(227,93,33,.75);
 }
