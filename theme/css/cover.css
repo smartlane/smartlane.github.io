@@ -87,6 +87,8 @@ table {
 	padding: 25px;
         margin-top: 1.3em;
         margin-bottom: 1.3em;
+        margin-left:auto; 
+        margin-right:auto;
 }
 
 .slbox {
