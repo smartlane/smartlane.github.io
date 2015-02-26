@@ -61,7 +61,9 @@ color: #e35d21;
 .orangetext {
   color: #e35d21;
 }
-
+.tableicon {
+        width: 100px;
+}
 .header {
 	font-weight: bold;
 	font-size: 1.5em;
@@ -76,11 +78,11 @@ color: #e35d21;
 }
 .text {
 	font-size: 0.8em;
-	color: #959595;
+	color: #656565;
 	text-align: justify;
 }
 .spacer {
-	width: 100px;
+	width: 80px;
 }
 table {
 	border: none;
