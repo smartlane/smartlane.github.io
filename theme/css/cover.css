@@ -72,16 +72,14 @@ html {
 }
 
 body {
-  background: url(../../theme/img/background.jpg) no-repeat center center fixed; 
-min-height:100%;
+  background: url(../../theme/img/background.jpg) no-repeat center center fixed;
+  min-height:100%;
   font-family: 'Titillium Web',Oswald,Montserrat,Helvetica,Arial,sans-serif;
   font-size: 1.7em;
   color: #000;
   text-align: center;
 }
-h1 {
-  margin-bottom: em;
-}
+
 h2, h3 {
 color: #e35d21;
 }
@@ -135,13 +133,28 @@ table {
 
 .slbox {
     background: #ffffff;
-    background: rgba(255,255,255,.90);
+    /* background: rgba(255,255,255,.90); */
     padding-bottom: 40px;
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.slbox > h1, .slbox > p, .slbox > div, .slbox > table {
+   width: 1170px;
+   margin: 0 auto;
+}
+
+.gray {
+    background: #ffffff;
+    background: rgba(255,255,255,.80);
+}
+
+.slbox > h1 {
+  margin-bottom: em;
 }
 
 .col-md-12 {
@@ -161,7 +174,7 @@ table {
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
-  width: 90%;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -295,14 +308,12 @@ li.active > a {
   /* Handle the widths */
   .masthead,
   .mastfoot {
-    width: 90%;
+    width: 100%;
   }
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
-.slbox {
-margin-top:75px;
-}
+
 }
 
 .navbar-nav>li {
@@ -313,7 +324,7 @@ margin-top:75px;
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 850px;
+    width: 100%;
   }
 }
 */
