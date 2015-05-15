@@ -71,6 +71,10 @@ html {
   max-width: 386px;
 }
 
+#logo-sm {
+  padding: 30px;
+}
+
 body {
   background: url(../../theme/img/background.jpg) no-repeat center center fixed;
   min-height:100%;
@@ -119,6 +123,9 @@ color: #e35d21;
 .spacer {
 	width: 60px;
 }
+i {
+        font-style: normal;
+}
 td {
         vertical-align: top;
 }
@@ -134,18 +141,22 @@ table {
 .slbox {
     background: #ffffff;
     /* background: rgba(255,255,255,.90); */
-    padding-bottom: 40px;
+    padding-bottom: 75px;
     padding-right: 20px;
     padding-left: 20px;
-    padding-top: 40px;
+    padding-top: 135px;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
 }
 
-.slbox > h1, .slbox > p, .slbox > div, .slbox > table {
+.slbox > h1, .slbox > p, .slbox > div, .slbox > table, .slbox > ul {
    width: 1170px;
    margin: 0 auto;
+}
+
+#messagetext {
+   width: 800px;
 }
 
 .gray {
@@ -154,7 +165,8 @@ table {
 }
 
 .slbox > h1 {
-  margin-bottom: em;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .col-md-12 {
@@ -202,25 +214,16 @@ table {
 .masthead  {
   background: #ffffff;
   z-index: 200000;
-  padding-bottom: 15px;
 }
 .masthead-brand {
   margin-top: 10px;
 }
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
 .masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: #e35d21; /* IE8 proofing */
   color: rgba(227,93,33,.75);
+  padding-top: 35px;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus,
@@ -233,16 +236,6 @@ li.active > a {
 .masthead-nav > .active > a:focus {
   color: #e35d21;
 }
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
-
 
 /*
  * Cover

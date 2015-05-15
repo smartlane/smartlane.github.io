@@ -27,6 +27,37 @@
 	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <![endif]-->
+
+       <style>
+			details, summary { display: block; border: 1px solid #666; padding: 1em; }
+			/* Apply a pointer cursor and style the background upon hover to indicate <summary> is a clickable element. */
+			/* These styles can be applied regardless of whether the fallback is needed */
+			summary { cursor: pointer; }
+			summary:hover, summary:focus { background: #ddd; }
+
+			/* The following styles are not really needed, since the jQuery script takes care of hiding/displaying the elements. */
+			/* However, we’re still gonna use CSS as well to prevent FOUC in browsers that understand these selectors. */
+			/* Remember: by default (and probably most of the time), the contents of the <details> element are hidden. */
+			.no-details details > * { display: none; }
+			/* This doesn’t work very well in Firefox 3.6.x */
+			/* .no-details details[open] > * { display: block; } */
+			/* The following doesn’t toggle correctly in WebKit:
+			.no-details details > summary:before { content: '► '; }
+			.no-details details[open] > summary:before { content: '▼ '; }
+			*/
+			/* And yes, it should really be ::before, but that doesn’t work in IE8 */
+			.no-details details > summary:before { float: left; width: 20px; content: '► '; }
+			.no-details details.open > summary:before { content: '▼ '; }
+			/* For IE6 and IE7, who don’t support generated content, you could use padding-left + a background image instead */
+			/* I really couldn’t be bothered though. */
+			/*
+			.no-details details > summary { padding-left: 20px; background: url(img/arrow-sprite.png) no-repeat 0 0; }
+			.no-details details.open > summary { background-position: 0 -20px; }
+			*/
+			/* Make sure summary remains visible */
+			.no-details details summary { display: block; }
+		</style>
+
 </head>
 
   <body data-spy="scroll">
@@ -34,18 +65,24 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <nav>
+           
             <ul class="masthead nav navbar-nav masthead-nav">
-              <li id="home-menu-li" class="active"><a href="/#home">Home</a></li>
+              <a href="/"><img src="theme/img/logo_sm.png" id="logo-sm" class="pull-left" style="z-index: 50000000;"></a>
+                     <li id="impressum-menu-li" class="pull-right"><a href="/impressum">Impressum</a></li>
+ <li id="kontakt-menu-li" class="pull-right"><a href="/kontakt">Kontakt</a></li>
               <!-- <li id="vision-menu-li"><a href="/#vision">Vision</a></li> -->
-              <li id="smartlane-menu-li"><a href="/#smartlane">Angebot</a></li>
-              <li id="platform-menu-li"><a href="/#platform">Plattform</a></li>
-              <li id="team-menu-li"><a href="/#team">Team</a></li>
+
+              <li id="team-menu-li" class="pull-right"><a href="/#team">Team</a></li>
+              
+              <li id="platform-menu-li" class="pull-right"><a href="/#platform">Plattform</a></li>
+<li id="smartlane-menu-li" class="pull-right"><a href="/#smartlane">Angebot</a></li>
+              
               <!-- <li id="blog-menu-li"><a href="/blog">Blog</a></li> -->
-              <li id="kontakt-menu-li"><a href="/kontakt">Kontakt</a></li>
-              <li id="impressum-menu-li"><a href="/impressum">Impressum</a></li>
+
             </ul>
           </nav>
-          <div class="inner cover">
+         
+        <div class="inner cover">
     
     <div class="slbox">
     <h1>Impressum</h1>
@@ -68,25 +105,45 @@ Arcisstraße 21<br>
 <h2>Credits</h2>
 <p>Internetseite mit <a href="http://getbootstrap.com">Bootstrap</a> und <a href="http://getpelican.com/">Pelican</a> gebaut. Wir verwenden das <em>Cover</em> template von <a href="https://twitter.com/mdo">@mdo</a>. Icons von <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.elegantthemes.com" title="Elegant Themes">Elegant Themes</a>, <a href="http://yanlu.de" title="Yannick">Yannick</a>, <a href="http://www.rivolta.es" title="Situ Herrera">Situ Herrera</a>, <a href="http://www.simpleicon.com" title="SimpleIcon">SimpleIcon</a>, <a href="http://www.icons8.com" title="Icons8">Icons8</a> von <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> mit <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a> Lizenz und <a href="http://fontawesome.io">Font Awesome</a> von Dave Gandy.</p>
     </div>
-          </div>
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript
+  </div> <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/theme/js/ie10-viewport-bug-workaround.js"></script>
-<script>
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script> <!-- Latest compiled and minified JavaScript -->
+   <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <script src="/theme/js/ie10-viewport-bug-workaround.js"></script> <script>
 //Manual menu highlighting
 $("#home-menu-li").removeClass("active");
 $("#impressum-menu-li").addClass("active");
 </script>
-  </body>
+ 
+    <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script>
+		<script>
+			window.console || (window.console = { 'log': alert });
+			$(function() {
 
+				// Add conditional classname based on support
+				$('html').addClass($.fn.details.support ? 'details' : 'no-details');
 
+				// Show a message based on support
+				$('body').prepend($.fn.details.support ? 'Native support detected; the plugin will only add ARIA annotations and fire custom open/close events.' : 'Emulation active; you are watching the plugin in action!');
 
+				// Emulate <details> where necessary and enable open/close event handlers
+				$('details').details();
+
+				// Bind some example event handlers
+				$('details').on({
+					'open.details': function() {
+						console.log('opened');
+					},
+					'close.details': function() {
+						console.log('closed');
+					}
+				});
+
+			});
+		</script>
+</body>
 </html>
