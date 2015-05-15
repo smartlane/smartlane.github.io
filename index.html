@@ -10,17 +10,17 @@
 	    <!-- <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
 	    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,400,300' rel='stylesheet' type='text/css'>
-	    <link rel="icon" href="theme/img/favicon.ico">
+	    <link rel="icon" href="/theme/img/favicon.ico">
 
 	    <!-- compiled and minified CSS -->
-	    <link rel="stylesheet" href="theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 	    <!-- Optional theme -->
-	    <link rel="stylesheet" href="theme/css/cover.css">
+	    <link rel="stylesheet" href="/theme/css/cover.css">
 
 		<!-- Font awesome -->
-		<link rel="stylesheet" href="theme/bower_components/fontawesome/css/font-awesome.min.css">
-                <link rel="stylesheet" href="theme/bower_components/fontawesome-docker/fontcustom/fontcustom.css">
+		<link rel="stylesheet" href="/theme/bower_components/fontawesome/css/font-awesome.min.css">
+                <link rel="stylesheet" href="/theme/bower_components/fontawesome-docker/fontcustom/fontcustom.css">
 
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!--[if lt IE 9]>
@@ -29,22 +29,32 @@
 	    <![endif]-->
 
        <style>
-			details, summary { display: block}
-			details {
-				border: 1px solid #f5f5f5; 
-			}
-			summary { 
-				padding: 1em; 
-				background-image: -webkit-linear-gradient(white 0%, #f5f5f5 100%); 
-				background-image: -moz-linear-gradient(white 0%, #f5f5f5 100%); 
-				background-image: -o-linear-gradient(white 0%, #f5f5f5 100%); 
-				background-image: linear-gradient(white 0%, #f5f5f5 100%);
-				cursor: pointer;
-			}
+			details, summary { display: block; border: 1px solid #666; padding: 1em; }
+			/* Apply a pointer cursor and style the background upon hover to indicate <summary> is a clickable element. */
+			/* These styles can be applied regardless of whether the fallback is needed */
+			summary { cursor: pointer; }
 			summary:hover, summary:focus { background: #ddd; }
+
+			/* The following styles are not really needed, since the jQuery script takes care of hiding/displaying the elements. */
+			/* However, we’re still gonna use CSS as well to prevent FOUC in browsers that understand these selectors. */
+			/* Remember: by default (and probably most of the time), the contents of the <details> element are hidden. */
 			.no-details details > * { display: none; }
+			/* This doesn’t work very well in Firefox 3.6.x */
+			/* .no-details details[open] > * { display: block; } */
+			/* The following doesn’t toggle correctly in WebKit:
+			.no-details details > summary:before { content: '► '; }
+			.no-details details[open] > summary:before { content: '▼ '; }
+			*/
+			/* And yes, it should really be ::before, but that doesn’t work in IE8 */
 			.no-details details > summary:before { float: left; width: 20px; content: '► '; }
 			.no-details details.open > summary:before { content: '▼ '; }
+			/* For IE6 and IE7, who don’t support generated content, you could use padding-left + a background image instead */
+			/* I really couldn’t be bothered though. */
+			/*
+			.no-details details > summary { padding-left: 20px; background: url(img/arrow-sprite.png) no-repeat 0 0; }
+			.no-details details.open > summary { background-position: 0 -20px; }
+			*/
+			/* Make sure summary remains visible */
 			.no-details details summary { display: block; }
 		</style>
 
@@ -56,15 +66,15 @@
         <div class="cover-container">
           <nav>
            
-            <ul class="masthead nav navbar-nav masthead-nav">
-              <a href="/"><img src="theme/img/logo_sm.png" id="logo-sm" class="pull-left" style="z-index: 50000000;"></a>
-                     <li id="impressum-menu-li" class="pull-right"><a href="/impressum">Impressum</a></li>
- <li id="kontakt-menu-li" class="pull-right"><a href="/kontakt">Kontakt</a></li>
+            <ul class="masthead nav navbar-nav masthead-nav fixedheight">
+              <a class="pull-left active" href="/"><img src="theme/img/logo_sm.png" id="logo-sm" style="z-index: 50000000;"></a>
+                     <li id="impressum-menu-li" class="pull-right bottomaligned"><a href="/impressum">Impressum</a></li>
+ <li id="kontakt-menu-li" class="pull-right  bottomaligned"><a href="/kontakt">Kontakt</a></li>
               <!-- <li id="vision-menu-li"><a href="/#vision">Vision</a></li> -->
-              <li id="team-menu-li" class="pull-right"><a href="#team">Team</a></li>
+              <li id="team-menu-li" class="pull-right  bottomaligned"><a href="#team">Team</a></li>
               
-              <li id="platform-menu-li" class="pull-right"><a href="#platform">Plattform</a></li>
-<li id="smartlane-menu-li" class="pull-right"><a href="#smartlane">Angebot</a></li>
+              <li id="platform-menu-li" class="pull-right  bottomaligned"><a href="#platform">Plattform</a></li>
+<li id="smartlane-menu-li" class="pull-right  bottomaligned"><a href="#smartlane">Angebot</a></li>
               <!-- <li id="blog-menu-li"><a href="/blog">Blog</a></li> -->
 
             </ul>
@@ -83,6 +93,7 @@
 
          <div class="col-md-12" id="smartlane">
               <div class="slbox">
+
                 <h1 class="cover-heading">SMARTLANE</h1>
                 <p>Mit SMARTLANE bieten wir Ihnen eine Cloud-basierte Web-Plattform zur Analyse und zum Austausch von Mobilitätsdaten. Speziell zugeschnitten auf unsere Zielgruppe in Ingenieurbüros, Behörden, bei Herstellern von Detektionsinfrastruktur, in Forschungsinstituten und in der Automobilindustrie stellen wir eine hochskalierbare Datenplattform zur Analyse von Mobilitätsinformationen aller Art bereit. 
 Die Einhaltung etablierter technischer und vertraglicher Standards zum Datenschutz und zur Datensicherheit gewährleisten wir, um Ihre Daten stets entsprechend ihrer Nutzungsrichtlinien zu verarbeiten.</p>
@@ -90,71 +101,71 @@ Die Einhaltung etablierter technischer und vertraglicher Standards zum Datenschu
 <table>
 <tbody>
 <tr>
-<td class="text-left"><img src="theme/img/05_import_32px.png" class="icon"/></td>
+<td class="text-left"><img src="theme/img/05_import_32px.png" class="icon"></td>
 <td class="text-left"><strong>Datenimport</strong></td>
 </tr>
 <tr>
 <td class="text-left" colspan="2">
 <details>
-<summary>Mit SMARTLANE bündeln und verwalten Sie ihrer heterogenen Verkehrsdaten an zentraler Stelle.</summary>
-SMARTLANE bietet Ihnen die Möglichkeit, sämtliche (auch heterogene) Verkehrsdaten aus verschiedensten Quellen an zentraler Stelle auf einer Plattform zu bündeln. Die Anbindung von Webservices oder der Upload eigener Daten ist integraler Bestandteil der Plattform.<br/>
-Folgende Anwendungsbeispiele geben tieferen Einblick: <a href="files/pb_datenintegration.pdf">Datenintegration</a>
+<summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">Mit SMARTLANE bündeln und verwalten Sie ihrer heterogenen Verkehrsdaten an zentraler Stelle.</summary>
+SMARTLANE bietet Ihnen die Möglichkeit, sämtliche (auch heterogene) Verkehrsdaten aus verschiedensten Quellen an zentraler Stelle auf einer Plattform zu bündeln. Die Anbindung von Webservices oder der Upload eigener Daten ist integraler Bestandteil der Plattform.<br style="display: none;">
+Folgende Anwendungsbeispiele geben tieferen Einblick: <a style="display: none;" href="files/pb_datenintegration.pdf">Datenintegration</a>
 </details>
 </td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr>
-<td class="text-left"><img src="theme/img/01_exchange_32px.png" class="icon"/></td>
+<td class="text-left"><img src="theme/img/01_exchange_32px.png" class="icon"></td>
 <td class="text-left"><strong>Datenaustausch</strong></td>
 </tr>
 <tr>
 <td class="text-left" colspan="2">
 <details>
-<summary>Mit SMARTLANE wird der Austausch von mobilitätsrelevanten Daten zum Kinderspiel.</summary>
-SMARTLANE bietet eine einfache und sichere Möglichkeit, ihre Daten Projektpartnern oder der Öffentlichkeit bereitzustellen. Sei es als Datenbank, per Dateiaustausch oder mittels Webservices. Sollten Sie die Daten ausschließlich im eigenen Unternehmen nutzen wollen, so wird dies durch das integrierte Datenlizenzmanagement sichergestellt. Eine Anbindung und Vermittlung durch den Mobilitätsdatenmarktplatz (MDM) der BASt ist dabei selbstverständlich.<br/>
-Folgende Anwendungsbeispiele geben tieferen Einblick: <a href="files/pb_datenintegration.pdf">Datenintegration</a>
+<summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">Mit SMARTLANE wird der Austausch von mobilitätsrelevanten Daten zum Kinderspiel.</summary>
+SMARTLANE bietet eine einfache und sichere Möglichkeit, ihre Daten Projektpartnern oder der Öffentlichkeit bereitzustellen. Sei es als Datenbank, per Dateiaustausch oder mittels Webservices. Sollten Sie die Daten ausschließlich im eigenen Unternehmen nutzen wollen, so wird dies durch das integrierte Datenlizenzmanagement sichergestellt. Eine Anbindung und Vermittlung durch den Mobilitätsdatenmarktplatz (MDM) der BASt ist dabei selbstverständlich.<br style="display: none;">
+Folgende Anwendungsbeispiele geben tieferen Einblick: <a style="display: none;" href="files/pb_datenintegration.pdf">Datenintegration</a>
 </details>
 </td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr>
-<td class="text-left"><img src="theme/img/04_processing_32px.png" class="icon"/></td>
+<td class="text-left"><img src="theme/img/04_processing_32px.png" class="icon"></td>
 <td class="text-left"><strong>Intelligente Datenvorverarbeitung</strong></td>
 </tr>
 <tr>
 <td class="text-left" colspan="2">
 <details>
-<summary>Mit SMARTLANE optimieren sie ihre Datengrundlage für die weitere Verarbeitung innerhalb der verkehrlichen Wertschöpfungskette.</summary>
-SMARTLANE bietet Ihnen eine intelligente Vorverarbeitung und Aufbereitung Ihrer Daten direkt beim Import auf die Datenplattform. Unvollständige Informationen werden bei Bedarf ergänzt, Fehler bereinigt und die Daten mit entsprechenden Qualitätsinformationen versehen, um diese in nachgelagerten Gliedern ihrer Wertschöpfungskette optimal einsetzen zu können.<br/>
-Folgende Anwendungsbeispiele geben tieferen Einblick: <a href="files/pb_geodtenverarbeitung.pdf">Geodatenverarbeitung</a> | <a href="files/pb_qualitaetscockpit.pdf">Qualitätscockpit</a>
+<summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">Mit SMARTLANE optimieren sie ihre Datengrundlage für die weitere Verarbeitung innerhalb der verkehrlichen Wertschöpfungskette.</summary>
+SMARTLANE bietet Ihnen eine intelligente Vorverarbeitung und Aufbereitung Ihrer Daten direkt beim Import auf die Datenplattform. Unvollständige Informationen werden bei Bedarf ergänzt, Fehler bereinigt und die Daten mit entsprechenden Qualitätsinformationen versehen, um diese in nachgelagerten Gliedern ihrer Wertschöpfungskette optimal einsetzen zu können.<br style="display: none;">
+Folgende Anwendungsbeispiele geben tieferen Einblick: <a style="display: none;" href="files/pb_geodtenverarbeitung.pdf">Geodatenverarbeitung</a> | <a style="display: none;" href="files/pb_qualitaetscockpit.pdf">Qualitätscockpit</a>
 </details>
 </td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr>
-<td class="text-left"><img src="theme/img/03_report_32px.png" class="icon"/></td>
+<td class="text-left"><img src="theme/img/03_report_32px.png" class="icon"></td>
 <td class="text-left"><strong>Reporting</strong></td>
 </tr>
 <tr>
 <td class="text-left" colspan="2">
 <details>
-<summary>Mit SMARTLANE erstellen sie die Inhalte wissenschaftlicher Berichte oder Management Summaries im Handumdrehen und ohne Medienbrüche.</summary>
-SMARTLANE bietet ihnen umfangreiche Möglichkeiten zur Berichtserstellung ohne Medienbrüche. Standardisierte und individuell konfigurierbare Berichte in Form von PDF- oder MS-Office-Dokumenten stellen eine zentrale Säule der SMARTLANE-Funktionaliät dar. Des Weiteren bietet SMARTLANE die Möglichkeit, animierte Visualisierungen in 2D- oder 3D automatisiert direkt aus ihren Daten zu generieren.<br/>
-Folgende Anwendungsbeispiele geben tieferen Einblick: <a href="files/pb_reporting.pdf">Reporting</a>
+<summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">Mit SMARTLANE erstellen sie die Inhalte wissenschaftlicher Berichte oder Management Summaries im Handumdrehen und ohne Medienbrüche.</summary>
+SMARTLANE bietet ihnen umfangreiche Möglichkeiten zur Berichtserstellung ohne Medienbrüche. Standardisierte und individuell konfigurierbare Berichte in Form von PDF- oder MS-Office-Dokumenten stellen eine zentrale Säule der SMARTLANE-Funktionaliät dar. Des Weiteren bietet SMARTLANE die Möglichkeit, animierte Visualisierungen in 2D- oder 3D automatisiert direkt aus ihren Daten zu generieren.<br style="display: none;">
+Folgende Anwendungsbeispiele geben tieferen Einblick: <a style="display: none;" href="files/pb_reporting.pdf">Reporting</a>
 </details>
 </td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr>
-<td class="text-left"><img src="theme/img/06_mobility_32px.png" class="icon"/></td>
+<td class="text-left"><img src="theme/img/06_mobility_32px.png" class="icon"></td>
 <td class="text-left"><strong>Smart Mobility Analytics</strong></td>
 </tr>
 <tr>
 <td class="text-left" colspan="2">
 <details>
-<summary>Mit SMARTLANE können Sie umfangreiche verkehrliche Analysen konfigurieren und auf Ihrem Datenbestand direkt ausführen.</summary>
-SMARTLANE bietet Ihnen die Möglichkeit, Ihre Daten auf einfachste Weise zu Informationen zu verarbeiten und auszuwerten. Aus Rohdaten werden Erkenntnisse gewonnen und diese zu Wissen weiterverarbeitet, das sie z.B. für ihr Verkehrsmanagement oder als Grundlage für Investitionsentscheidungen direkt einsetzen können. Klassische verkehrstechnische Auswertungen, wie die Generierung von Zeitreihen oder Fundamentaldiagrammen gehören hierbei zu den einfachsten Übungen. Ergänzend dazu bietet SMARTLANE innovative und fundierte Analyseverfahren und Arbeitsabläufe, die einen Mehrwert durch zielgerichtete Empfehlungen und Einsichten im Verkehrswesen generieren. Ihre spezifischen individuellen Analyseanforderungen können dabei natürlich detailliert berücksichtigt und dank der modularen Struktur von SMARTLANE leicht angebunden werden.<br/>
-Folgende Anwendungsbeispiele geben tieferen Einblick: <a href="files/pb_prozessmanagement.pdf">Prozessmanagement</a>
+<summary tabindex="0" style="-moz-user-select: none;" role="button" aria-expanded="false">Mit SMARTLANE können Sie umfangreiche verkehrliche Analysen konfigurieren und auf Ihrem Datenbestand direkt ausführen.</summary>
+SMARTLANE bietet Ihnen die Möglichkeit, Ihre Daten auf einfachste Weise zu Informationen zu verarbeiten und auszuwerten. Aus Rohdaten werden Erkenntnisse gewonnen und diese zu Wissen weiterverarbeitet, das sie z.B. für ihr Verkehrsmanagement oder als Grundlage für Investitionsentscheidungen direkt einsetzen können. Klassische verkehrstechnische Auswertungen, wie die Generierung von Zeitreihen oder Fundamentaldiagrammen gehören hierbei zu den einfachsten Übungen. Ergänzend dazu bietet SMARTLANE innovative und fundierte Analyseverfahren und Arbeitsabläufe, die einen Mehrwert durch zielgerichtete Empfehlungen und Einsichten im Verkehrswesen generieren. Ihre spezifischen individuellen Analyseanforderungen können dabei natürlich detailliert berücksichtigt und dank der modularen Struktur von SMARTLANE leicht angebunden werden.<br style="display: none;">
+Folgende Anwendungsbeispiele geben tieferen Einblick: <a style="display: none;" href="files/pb_prozessmanagement.pdf">Prozessmanagement</a>
 </details>
 </td>
 </tr>
@@ -179,13 +190,13 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
 
               <table>
                 <tr>
-                  <td rowspan="2" width="50%"><img src="theme/img/05_import.png"></td>
+                  <td rowspan="2" width="50%"><img src="/theme/img/05_import.png"></td>
 
                   <td class="text">Um einen Eindruck davon zu bekommen, was SMARTLANE bietet, können Sie sich für einen Testzugang zu unserer Plattform registrieren. Für Wünsche und Anregungen sind wir stets aufgeschlossen. Kontaktieren Sie uns einfach unter info@smartlane.de</td>
                 </tr>
 
                 <tr>
-                  <td class="text-left">
+                  <td>
 <br />
                     <a class="btn" href="signup">Jetzt Testzugang beantragen!</a>
                   </td>
@@ -211,9 +222,9 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
 
               <div class="row">
                 <div class="col-md-3">
-                  <div class="avatar-frame center-block"><img src="theme/img/mathias.jpg" style="width: 100%;"></div>
+                  <div class="avatar-frame center-block"><img src="/theme/img/mathias.jpg" style="width: 100%;"></div>
 
-                  <p class="lead">Mathias Baur</p>
+                  <p class="lead">Dr. Mathias Baur</p>
 
                   <p>Finanzen, Gesamtarchitektur,<br>
                   Entwicklung</p>
@@ -224,7 +235,7 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
                 </div>
 
                 <div class="col-md-3">
-                  <div class="avatar-frame center-block"><img src="theme/img/monja.jpg" style="width: 100%;"></div>
+                  <div class="avatar-frame center-block"><img src="/theme/img/monja.jpg" style="width: 100%;"></div>
 
                   <p class="lead">Monja Egbers</p>
 
@@ -236,7 +247,7 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
                 </div>
 
                 <div class="col-md-3">
-                  <div class="avatar-frame center-block"><img src="theme/img/matthew.jpg" style="width: 100%;"></div>
+                  <div class="avatar-frame center-block"><img src="/theme/img/matthew.jpg" style="width: 100%;"></div>
 
                   <p class="lead">Matthew Fullerton</p>
 
@@ -249,12 +260,12 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
                 </div>
 
                 <div class="col-md-3">
-                  <div class="avatar-frame center-block"><img src="theme/img/flo.jpg" style="width: 100%;"></div>
+                  <div class="avatar-frame center-block"><img src="/theme/img/flo.jpg" style="width: 100%;"></div>
 
                   <p class="lead">Florian Schimandl</p>
 
                   <p>Organisation, Projektmanagement,<br>
-                  Vertrieb, Entwicklung</p>
+                  Entwicklung</p>
 
                   <p><a class="fa fa-envelope" href="mailto:florian@smartlane.de"  ></a> <a class="fa fa-twitter" href="http://twitter.com/fschimandl"  ></a> <a class="fa fa-xing-square" href="https://www.xing.com/profile/Florian_Schimandl"  ></a> <!-- Leaving out for now
                     <i class="fa fa-bitbucket"></i>
@@ -269,7 +280,7 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
 
           <div class="col-md-12" id="supporters">
             <div class="slbox gray">
-              <p>Wir danken unseren Unterstützern:</p><a href="http://www.exist.de/DE"><img src="theme/img/exist_logo_mu_rgb.png" width="120px"></a>&nbsp; <a href="http://www.bmwi.de/"><img src="theme/img/bmwi_4c_gef_bundestag.png" width="120px"></a> <a href="http://www.esf.de"><img src="theme/img/bma_esf_es_rgb_srweiss.png" width="120px"></a>&nbsp;&nbsp;&nbsp; <a href="http://europa.eu/index_de.htm"><img src="theme/img/eu_links_rgb.png" width="120px"></a>&nbsp; <a href="https://www.unternehmertum.de/"><img src="theme/img/unternehmertum.png"></a>&nbsp; <a href="http://www.tum.de"><img src="theme/img/tum.png" width="100px"></a>&nbsp;&nbsp; <a href="http://www.vt.bgu.tum.de"><img src="theme/img/tumvt.png" width="75px"></a>&nbsp; <a href="http://gr-m.de"><img src="theme/img/regiom.png"></a><br>
+              <p>Wir danken unseren Unterstützern:</p><a href="http://www.exist.de/DE"><img src="/theme/img/exist_logo_mu_rgb.png" width="120px"></a>&nbsp; <a href="http://www.bmwi.de/"><img src="/theme/img/bmwi_4c_gef_bundestag.png" width="120px"></a> <a href="http://www.esf.de"><img src="/theme/img/bma_esf_es_rgb_srweiss.png" width="120px"></a>&nbsp;&nbsp;&nbsp; <a href="http://europa.eu/index_de.htm"><img src="/theme/img/eu_links_rgb.png" width="120px"></a>&nbsp; <a href="https://www.unternehmertum.de/"><img src="/theme/img/unternehmertum.png"></a>&nbsp; <a href="http://www.tum.de"><img src="/theme/img/tum.png" width="100px"></a>&nbsp;&nbsp; <a href="http://www.vt.bgu.tum.de"><img src="/theme/img/tumvt.png" width="75px"></a>&nbsp; <a href="http://gr-m.de"><img src="/theme/img/regiom.png"></a><br>
               <br>
 
               <p class="small">SMARTLANE, ein Projekt des EXIST-Gründungsvorhabens "Tapestry".</p>
@@ -282,24 +293,11 @@ Sparen Sie Teile Ihrer bestehenden oder neu anzuschaffenden IT-Infrastruktur ein
   </div> <!-- Bootstrap core JavaScript
     ================================================== -->
    <!-- Placed at the end of the document so the pages load faster -->
-   <script src="theme/bower_components/jquery/dist/jquery.min.js"></script> <!-- Latest compiled and minified JavaScript -->
-   <script src="theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-   <script src="theme/js/ie10-viewport-bug-workaround.js"></script>   
-    <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script>
-		<script>
-			//window.console || (window.console = { 'log': alert });
-			$(function() {
-
-				// Add conditional classname based on support
-				$('html').addClass($.fn.details.support ? 'details' : 'no-details');
-
-				// Show a message based on support
-				$('body').prepend($.fn.details.support ? 'Native support detected; the plugin will only add ARIA annotations and fire custom open/close events.' : 'Emulation active; you are watching the plugin in action!');
-
-				// Emulate <details> where necessary and enable open/close event handlers
-				$('details').details();
-
-			});
-		</script>
+   <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script> <!-- Latest compiled and minified JavaScript -->
+   <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <script src="/theme/js/ie10-viewport-bug-workaround.js"></script> 
+   <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script> 
+  
+   
 </body>
 </html>

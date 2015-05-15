@@ -66,16 +66,16 @@
         <div class="cover-container">
           <nav>
            
-            <ul class="masthead nav navbar-nav masthead-nav">
-              <a href="/"><img src="theme/img/logo_sm.png" id="logo-sm" class="pull-left" style="z-index: 50000000;"></a>
-                     <li id="impressum-menu-li" class="pull-right"><a href="/impressum">Impressum</a></li>
- <li id="kontakt-menu-li" class="pull-right"><a href="/kontakt">Kontakt</a></li>
+            <ul class="masthead nav navbar-nav masthead-nav fixedheight">
+              <a class="pull-left active" href="/"><img src="theme/img/logo_sm.png" id="logo-sm" style="z-index: 50000000;"></a>
+                     <li id="impressum-menu-li" class="pull-right bottomaligned"><a href="/impressum">Impressum</a></li>
+ <li id="kontakt-menu-li" class="pull-right  bottomaligned"><a href="/kontakt">Kontakt</a></li>
               <!-- <li id="vision-menu-li"><a href="/#vision">Vision</a></li> -->
 
-              <li id="team-menu-li" class="pull-right"><a href="/#team">Team</a></li>
+              <li id="team-menu-li" class="pull-right  bottomaligned"><a href="/#team">Team</a></li>
               
-              <li id="platform-menu-li" class="pull-right"><a href="/#platform">Plattform</a></li>
-<li id="smartlane-menu-li" class="pull-right"><a href="/#smartlane">Angebot</a></li>
+              <li id="platform-menu-li" class="pull-right  bottomaligned"><a href="/#platform">Plattform</a></li>
+<li id="smartlane-menu-li" class="pull-right  bottomaligned"><a href="/#smartlane">Angebot</a></li>
               
               <!-- <li id="blog-menu-li"><a href="/blog">Blog</a></li> -->
 
@@ -111,37 +111,14 @@ Arcisstraße 21<br>
    <!-- Placed at the end of the document so the pages load faster -->
    <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script> <!-- Latest compiled and minified JavaScript -->
    <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-   <script src="/theme/js/ie10-viewport-bug-workaround.js"></script> <script>
+   <script src="/theme/js/ie10-viewport-bug-workaround.js"></script> 
+   <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script> 
+<script>
 //Manual menu highlighting
 $("#home-menu-li").removeClass("active");
 $("#kontakt-menu-li").addClass("active");
 </script>
  
-    <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script>
-		<script>
-			window.console || (window.console = { 'log': alert });
-			$(function() {
-
-				// Add conditional classname based on support
-				$('html').addClass($.fn.details.support ? 'details' : 'no-details');
-
-				// Show a message based on support
-				$('body').prepend($.fn.details.support ? 'Native support detected; the plugin will only add ARIA annotations and fire custom open/close events.' : 'Emulation active; you are watching the plugin in action!');
-
-				// Emulate <details> where necessary and enable open/close event handlers
-				$('details').details();
-
-				// Bind some example event handlers
-				$('details').on({
-					'open.details': function() {
-						console.log('opened');
-					},
-					'close.details': function() {
-						console.log('closed');
-					}
-				});
-
-			});
-		</script>
+   
 </body>
 </html>
