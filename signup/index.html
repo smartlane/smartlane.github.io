@@ -29,59 +29,51 @@
 	    <![endif]-->
 
        <style>
-			details, summary { display: block; border: 1px solid #666; padding: 1em; }
-			/* Apply a pointer cursor and style the background upon hover to indicate <summary> is a clickable element. */
-			/* These styles can be applied regardless of whether the fallback is needed */
-			summary { cursor: pointer; }
-			summary:hover, summary:focus { background: #ddd; }
-
-			/* The following styles are not really needed, since the jQuery script takes care of hiding/displaying the elements. */
-			/* However, we’re still gonna use CSS as well to prevent FOUC in browsers that understand these selectors. */
-			/* Remember: by default (and probably most of the time), the contents of the <details> element are hidden. */
+			details, summary { display: block}
+			details {
+				border: 1px solid #f5f5f5; 
+			
+				padding: 1em; 
+				background-image: -webkit-linear-gradient(white 0%, #f5f5f5 100%); 
+				background-image: -moz-linear-gradient(white 0%, #f5f5f5 100%); 
+				background-image: -o-linear-gradient(white 0%, #f5f5f5 100%); 
+				background-image: linear-gradient(white 0%, #f5f5f5 100%);
+				cursor: pointer;
+			}
+			details:hover, details:focus { background: #ddd; }
 			.no-details details > * { display: none; }
-			/* This doesn’t work very well in Firefox 3.6.x */
-			/* .no-details details[open] > * { display: block; } */
-			/* The following doesn’t toggle correctly in WebKit:
-			.no-details details > summary:before { content: '► '; }
-			.no-details details[open] > summary:before { content: '▼ '; }
-			*/
-			/* And yes, it should really be ::before, but that doesn’t work in IE8 */
-			.no-details details > summary:before { float: left; width: 20px; content: '► '; }
-			.no-details details.open > summary:before { content: '▼ '; }
-			/* For IE6 and IE7, who don’t support generated content, you could use padding-left + a background image instead */
-			/* I really couldn’t be bothered though. */
-			/*
-			.no-details details > summary { padding-left: 20px; background: url(img/arrow-sprite.png) no-repeat 0 0; }
-			.no-details details.open > summary { background-position: 0 -20px; }
-			*/
-			/* Make sure summary remains visible */
+			/* .no-details details > summary:before { float: left; width: 20px; content: '► '; }
+			.no-details details.open > summary:before { content: '▼ '; } */
 			.no-details details summary { display: block; }
 		</style>
+
+     
 
 </head>
 
   <body data-spy="scroll">
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
-        <div class="cover-container">
+    
           <nav>
-           
-            <ul class="masthead nav navbar-nav masthead-nav fixedheight">
-              <a class="pull-left active" href="/"><img src="theme/img/logo_sm.png" id="logo-sm" style="z-index: 50000000;"></a>
+           <div class="container-fluid fixedheight" style="position: fixed; top: 0px; padding: 0px; background: white; width: 100%;">
+            <ul class="masthead nav navbar-nav masthead-nav fixedheight" style="float: none; margin: 0 auto;">
+              <a class="pull-left active" href="/#home"><img src="/theme/img/logo_sm.png" id="logo-sm" style="z-index: 50000000;"></a>
                      <li id="impressum-menu-li" class="pull-right bottomaligned"><a href="/impressum">Impressum</a></li>
  <li id="kontakt-menu-li" class="pull-right  bottomaligned"><a href="/kontakt">Kontakt</a></li>
               <!-- <li id="vision-menu-li"><a href="/#vision">Vision</a></li> -->
 
               <li id="team-menu-li" class="pull-right  bottomaligned"><a href="/#team">Team</a></li>
               
-              <li id="platform-menu-li" class="pull-right  bottomaligned"><a href="/#platform">Plattform</a></li>
+              <li id="platform-menu-li" class="pull-right  bottomaligned"><a href="/#platform">Mobilitätsdatenplattform</a></li>
 <li id="smartlane-menu-li" class="pull-right  bottomaligned"><a href="/#smartlane">Angebot</a></li>
               
               <!-- <li id="blog-menu-li"><a href="/blog">Blog</a></li> -->
 
             </ul>
+</div>
           </nav>
-         
+             <div class="cover-container">
         <div class="inner cover">
     
     <div class="slbox">
@@ -236,7 +228,22 @@ if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jque
    <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script> <!-- Latest compiled and minified JavaScript -->
    <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
    <script src="/theme/js/ie10-viewport-bug-workaround.js"></script> 
-   <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script> 
+    <script src="http://www.schimandl.de/smartlane/jquery.details.js?v=0.1.0"></script>
+		<script>
+			//window.console || (window.console = { 'log': alert });
+			$(function() {
+
+				// Add conditional classname based on support
+				$('html').addClass($.fn.details.support ? 'details' : 'no-details');
+
+				// Show a message based on support
+				$('body').prepend($.fn.details.support ? 'Native support detected; the plugin will only add ARIA annotations and fire custom open/close events.' : 'Emulation active; you are watching the plugin in action!');
+
+				// Emulate <details> where necessary and enable open/close event handlers
+				$('details').details();
+
+			});
+		</script>
 <script>
 //Manual menu highlighting
 $("#home-menu-li").removeClass("active");

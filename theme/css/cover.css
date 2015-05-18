@@ -9,6 +9,11 @@ a:hover {
   color: #e35d21;
 }
 
+
+hr {
+  max-width: 1300px;
+}
+
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
@@ -116,16 +121,27 @@ color: #e35d21;
 .extrapadding {
         padding-top: 37px;
 }
+#smartlane > div > br {
+        display:block; margin-top:10px; line-height:22px;
+}
+#smartlane > p {
+    text-align: left;
+}
 .icon {
 	margin-right: 20px;
-	margin-bottom: 0px;
+	
 	margin-top: 10px;
+        vertical-align: text-bottom;
+}
+summary > p {
+margin-top: 10px;
 }
 .text {
 	font-size: 1.4rem;
 	font-weight: normal;
         color: #656565;
 	text-align: justify;
+        margin-bottom: 10px;
 }
 .spacer {
 	width: 60px;
@@ -134,7 +150,7 @@ i {
         font-style: normal;
 }
 td {
-        vertical-align: top;
+        vertical-align: middle;
 }
 table {
 	border: none;
@@ -157,13 +173,20 @@ table {
     text-align: center;
 }
 
-.slbox > h1, .slbox > p, .slbox > div, .slbox > table, .slbox > ul {
+.slbox > h1, .slbox > p, .slbox > div, .slbox > table, .slbox > ul, .slbox > details {
    width: 1170px;
    margin: 0 auto;
+
+}
+
+.slbox > details {
+  text-align: left;
 }
 
 #messagetext {
-   width: 800px;
+   /* width: 800px; */
+   font-size: 2.5em;
+   
 }
 
 .gray {
@@ -173,7 +196,7 @@ table {
 
 .slbox > h1 {
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .col-md-12 {
@@ -293,10 +316,6 @@ li.active > a {
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
   .mastfoot {
     position: fixed;
     bottom: 0;
@@ -311,7 +330,8 @@ li.active > a {
     /* width: 100%; */
   }
   .cover-container {
-    max-width: 1300px; /* Must be percentage or pixels for horizontal alignment */
+   /* max-width: 1300px;  Must be percentage or pixels for horizontal alignment */
+width: 100%;
   }
 
 }
