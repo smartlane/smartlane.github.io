@@ -9,6 +9,10 @@ a:hover {
   color: #e35d21;
 }
 
+.col-md-12 {
+  top: 135px;
+}
+
 
 hr {
   max-width: 1300px;
@@ -314,7 +318,7 @@ li.active > a {
  * Affix and center
  */
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {*/
   /* Pull out the header and footer */
   .mastfoot {
     position: fixed;
@@ -331,6 +335,13 @@ li.active > a {
   }
   .cover-container {
    /* max-width: 1300px;  Must be percentage or pixels for horizontal alignment */
+width: 1300px;
+  }
+
+/*}*/
+
+@media (min-width: 768px) {
+  .cover-container {
 width: 100%;
   }
 
