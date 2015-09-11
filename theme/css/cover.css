@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #e35d21;
+  color: #333333;
 }
 
 .col-md-12 {
@@ -14,7 +14,7 @@ a:hover {
 }
 
 a.firstlanguagelink {
-  margin-left: 45px;
+  margin-left: 125px;
 }
 
 hr {
@@ -78,7 +78,9 @@ html {
 }
 
 .navbar-nav { margin: 0px;  width: 100%;
-max-width: 1300px;
+/* max-width: 1300px; */
+padding-left: 50px;
+padding-right: 50px;
 vertical-align: bottom;}
 #logo {
   width: 100%;
@@ -93,9 +95,10 @@ vertical-align: bottom;}
 
 .fixedheight { height: 160px; position:relative; }
 .bottomaligned {position:relative; top:80%; height:10em; margin-top:-5em}
+.pbottomaligned {position:relative; bottom:20px; height:10em; margin-top:-5em}
 
 body {
-  background: url(../../theme/img/background.jpg) no-repeat center center fixed;
+  background: #ffffff;
   min-height:100%;
   font-family: 'Titillium Web',Oswald,Montserrat,Helvetica,Arial,sans-serif;
   font-size: 1.7em;
@@ -258,8 +261,8 @@ table {
 .masthead-nav > li > a {
   font-size: 20px;
   font-weight: 600;
-  color: #e35d21; /* IE8 proofing */
-  color: rgba(227,93,33,.75);
+  color: #000000 /* IE8 proofing */
+  color: rgba(0,0,0,.75);
   padding-top: 35px;
 }
 .masthead-nav > li > a:hover,
@@ -276,7 +279,7 @@ li.active > a {
 .masthead-nav > li > a.activelang:hover,
 .masthead-nav > li > a.activelang:focus
 {
-  color: #e35d21;
+  color: #000000;
 }
 
 /*
