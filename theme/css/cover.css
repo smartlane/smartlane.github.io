@@ -9,6 +9,12 @@ a:hover {
   color: #333333;
 }
 
+a.fa,
+a.fa:focus,
+a.fa:hover {
+  color: #e35d21;
+}
+
 .col-md-12 {
   top: 135px;
 }
