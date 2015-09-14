@@ -39,6 +39,31 @@
       /* .no-details details > summary:before { float: left; width: 20px; content: '► '; }
       .no-details details.open > summary:before { content: '▼ '; } */
       .no-details details summary { display: block; }
+      
+      #slides {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  top: 80px;
+}
+
+#slides ul {
+  list-style: none;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 80px;
+}
+
+#slides li {
+  height: 250px;
+  float: left;
+  text-align: left;
+  position: relative;
+  top: 80px;
+}
+
     </style>
   </head>
   <body data-spy="scroll">
@@ -48,12 +73,12 @@
           <div class="container-fluid fixedheight" style="position: fixed; top: 0px; padding: 0px; background: white; width: 100%; z-index: 20000000; border-top: 6px solid #e3e3e3; border-bottom: 162px solid #e3e3e3;">
             <ul class="masthead nav navbar-nav masthead-nav fixedheight" style="float: none; margin: 0 auto;">
               <a class="pull-left active" href="/en/#home"><img src="/theme/img/logo_sm.png" id="logo-sm" style="z-index: 50000000;"></a>
-              <li id="kontakt-menu-li" class="pull-right  bottomaligned"><a href="/en/kontakt">Kontakt</a></li>
+              <li id="kontakt-menu-li" class="pull-right  bottomaligned"><a href="/en/kontakt">Contact</a></li>
               <li id="blog-menu-li" class="pull-right  bottomaligned"><a href="/en/blog.html">Blog<!-- <sup><img src="http://s3.amazonaws.com/satisfaction-production/s3_images/127848/newicon.gif" /> --></a></li>
               <!-- <li id="vision-menu-li"><a href="/#vision">Vision</a></li> -->
               <li id="team-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="#team">Team</a></li>
               
-              <li id="platform-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="#platform">Produkt</a></li>
+              <li id="platform-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="#platform">Product</a></li>
 <li id="smartlane-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="#smartlane">Mobility Intelligence</a></li>
               <li>
                 <a style="background: #e3e3e3;" class="firstlanguagelink " href="/">de</a>
@@ -68,32 +93,60 @@
           <div class="inner cover">
             <div class="col-md-12" id="home" style="background: url(../../theme/img/smartlane_title.jpg) no-repeat center center; background-size: cover;">
               <div class="slbox" style="background: transparent;  min-height: 800px;">
-              <p style="padding-top: 300px; color: #ffffff; text-align: left; font-size: 4em;">Mobility Intelligence.</p>
+              <!--<p style="padding-top: 300px; color: #ffffff; text-align: left; font-size: 4em;">Mobility Intelligence.</p>-->
+              <div style="visibility: hidden;" class="btn-bar">
+  <div id="buttons">
+    <a id="prev" href="#">&lt;</a>
+    <a id="next" href="#">&gt;</a>
+  </div>
+</div>
+
+              
+              <a href="#smartlane"><div id="slides">
+  <ul>
+    <li class="slide">
+      <p style="color: #ffffff; text-align: left; font-size: 5em;">Zero-Click Data Integration</p><p style="color: #ffffff; text-align: left; font-size: 1.5em;">Simplify your big data handling.</p>
+    </li>
+    <li class="slide">
+      <p style="color: #ffffff; text-align: left; font-size: 5em;">Machine Learning</p><p style="color: #ffffff; text-align: left; font-size: 1.5em;">Let your mobility data work for you.</p>
+    </li>
+    <li class="slide">
+      <p style="color: #ffffff; text-align: left; font-size: 5em;">Mobility Dashboards</p><p style="color: #ffffff; text-align: left; font-size: 1.5em;">Get valuable insight into your operational mobility.</p>
+    </li>
+  </ul>
+</div></a>
+
+              
               </div>
             </div>
             <div class="col-md-12" id="smartlane">
               <div class="slbox">
                 <br><br>
                 <div class="row">
+                   <div class="col-md-12" style="padding-right: 25px; padding-left: 25px; top: 0px;">
+                     <p style="background: #e3e3e3; padding: 30px;"><span style="font-size: 2em; color: #e35d21; line-height: 1.2;">Mobility Intelligence</span><br><br>With <em>SMARTLANE Mobility Intelligence</em> you have access to a performant and straightforward web-based platform. This can generate new insights and predictions from your own mobility information, enhanced with valuable additional sources that we collect and integrate for you.</p>
+                   </div>
+                </div>
+                <div class="row">
                    <div class="col-md-4" style="padding-right: 25px; padding-left: 25px;">
-                     <p style="background: #e3e3e3; padding: 30px;">Die SMARTLANE Mobility Intelligence Plattform bietet Ihnen umfangreiche Möglichkeiten zur Analyse und Visualisierung Ihrer Mobilitätsdaten.</p>
+                     <p style="background: #e3e3e3; padding: 30px; min-height: 360px;"><span style="font-size: 2em; color: #e35d21; line-height: 1.2;">Data integration</span><br><br>SMARTLANE opens up your data silos and allows you to create a secure, accessible and integrated data hub. In this way your own data are carefully combined with external sources in order to provide comprehensive information value.</p>
                    </div>
                    <div class="col-md-4" style="padding-right: 25px; padding-left: 25px;">
-                     <p style="background: #bbbbbb; padding: 30px;">Die SMARTLANE Mobility Intelligence Plattform bietet Ihnen umfangreiche Möglichkeiten zur Analyse und Visualisierung Ihrer Mobilitätsdaten.</p>
+                     <p style="background: #e3e3e3; padding: 30px; min-height: 360px;"><span style="font-size: 2em; color: #e35d21; line-height: 1.2;">Machine Learning</span><br><br><br>SMARTLANE allows you to learn from your data and reveals mobility-related challenges and their repercussions. <em>SMARTLANE Mobility Intelligence</em> uses innovative learning algorithms to make early and precise predictions.</p>
                    </div>
                    <div class="col-md-4" style="padding-right: 25px; padding-left: 25px;">
-                     <p style="background: #868686; padding: 30px;">Die SMARTLANE Mobility Intelligence Plattform bietet Ihnen umfangreiche Möglichkeiten zur Analyse und Visualisierung Ihrer Mobilitätsdaten.</p>
+                     <p style="background: #e3e3e3; padding: 30px; min-height: 360px;"><span style="font-size: 2em; color: #e35d21; line-height: 1.2;">Dashboards</span><br><br><br><br>Straightforward dashboards allow you to directly and simply ascertain the most important mobility criteria for your business or institution.</p>
                    </div>
               </div>
             </div>
             <div class="col-md-12" style="background: #e3e3e3;" id="platform" >
-              <div class="slbox" style="background: transparent;"><br><br>
+              <div class="slbox" style="background: transparent; padding-bottom: 0px;"><br><br>
                 <div class="row">
                    <div class="col-md-6" style="padding-right: 25px; padding-left: 25px;">
-                   <img class="padded-image" src="/theme/img/screenshot.png" />
+                   <img src="/theme/img/dashboard_n5_framed_small.png" />
                    </div>
                    <div class="col-md-6" style="padding-right: 25px; padding-left: 25px; min-height: 311px;">
-                   <p class="pull-left" style="text-align: left; position: absolute; bottom: 20px;">Call to action text<br><br><a class="btn" href="signup">Jetzt Testzugang beantragen!</a></p>
+                   <p class="pull-left" style="text-align: left; position: absolute; bottom: 20px; width: 100%;">With our software platform you can attain new insights into the optimization potential of your operational mobility and hence make better-informed decisions.<br><br><a class="btn" href="signup" style="width: 100%;">Register for a free test account now</a></p>
                    </div>
               </div>
             </div>
@@ -102,12 +155,12 @@
               <br><br>
               <div class="slbox">
               <h1 class="cover-heading">Vision</h1>
-              <p class="lead orangetext">SMARTLANE überwindet Grenzen und generiert umfassendes und allen zugängliches Wissen, das die <strong>intelligente Mobilität der Zukunft</strong> und damit eine neue Dimension an Verkehrssicherheit und -komfort ermöglicht.</p>
+              <p class="lead orangetext">SMARTLANE overcomes today's mobility data limitations, generating comprehensive and accesivle information for the <strong>intelligent mobility of the future</strong>, allowing new dimensions of traffic and transport safety and comfort.</p>
               <hr>
-              <p class="lead">"Daten ohne Grenzen"</p>
-              <p>keine Betreiber-, keine Verwaltungs-, keine Modusgrenzen</p>
-              <p class="lead">"Informationen auf der Überholspur"</p>
-              <p>Schnelle, einfache und Mehrwert generierende Informationsgewinnung</p>
+              <p class="lead">"Data without limits"</p>
+              <p>No provider-, management- or format-limits</p>
+              <p class="lead">"Information on the fast lane"</p>
+              <p>Fast, easy and value-added information retrieval</p>
               </div>
               </div> -->
             <div class="col-md-12" id="team" style="background: url(../../theme/img/mapbackground.jpg) no-repeat center center; background-size: cover;">
@@ -123,7 +176,7 @@
                         <i class="fa fa-bitbucket"></i>
                         -->
                     </p>
-                    <p>Projektmanagement, Vertrieb, Kundenbetreuung</p>
+                    <p>Project management, marketing, customer support</p>
                   </div>
                   <div class="col-md-3">
                     <div class="avatar-frame center-block"><img src="/theme/img/mathias.jpg" style="width: 100%;"></div>
@@ -133,8 +186,8 @@
                         <i class="fa fa-bitbucket"></i>
                         -->
                     </p>
-                    <p>Geschäfts- und Produktentwicklung,
-                      Softwareentwicklung, Recht & IP                    </p>
+                    <p>Business and product development,
+Software development, Legal & IP                    </p>
                   </div>
                   <div class="col-md-3">
                     <div class="avatar-frame center-block"><img src="/theme/img/matthew.jpg" style="width: 100%;"></div>
@@ -144,7 +197,7 @@
                         <i class="fa fa-bitbucket"></i>
                         -->
                     </p>
-                    <p>Softwareentwicklung, Systemadministration, Forschungskoordination</p>
+                    <p>Software development, system administration and research</p>
                   </div>
                   <div class="col-md-3">
                     <div class="avatar-frame center-block"><img src="/theme/img/monja.jpg" style="width: 100%;"></div>
@@ -154,35 +207,41 @@
                         <i class="fa fa-bitbucket"></i>
                         -->
                     </p>
-                    <p>Coaching im Bereich Marketing, Vertrieb, Finanzen & Finanzierung</p>
+                    <p>Coaching in marketing, sales and financing</p>
                   </div>
                 </div>
                 &nbsp;<br>
                 <br>
-                <p>Die Gründer verbindet langjährige Erfahrung in Wissenschaft und Anwendung der Verkehrstechnik sowie der Informationstechnologie. Dies führt zu optimalen Lösungen für alle Herausforderungen, die sich ihnen im Bereich der Verkehrsdatenanalyse bieten.</p>
+                <p>Our team combines many years of experience in research and practice in traffic engineering as well as IT. This leads to optimal solutions for the diverse challenges in mobility data analysis.</p>
               </div>
             </div>
-            <div class="col-md-12" style="background: #e3e3e3;" id="supporters">
+            <!-- <div class="col-md-12" style="background: #e3e3e3;" id="supporters">
               <div class="slbox" style="background: transparent;">
-                <p>Wir danken unseren Unterstützern und Partnern:</p>
-                <p style="max-width: 800px;">&nbsp; <a href="http://www.bmwi.de/"><img src="/theme/img/bmwi_4c_gef_bundestag.png" width="120px"></a> &nbsp;<a href="http://www.exist.de/DE"><img src="/theme/img/exist_logo_mu_rgb.png" width="120px"></a>&nbsp;<a href="http://www.esf.de"><img src="/theme/img/bma_esf_es_rgb_srweiss.png" width="120px"></a>&nbsp;&nbsp;&nbsp; <a href="http://europa.eu/index_de.htm"><img src="/theme/img/eu_links_rgb.png" width="120px"></a>&nbsp; <a href="https://www.unternehmertum.de/"><img src="/theme/img/unternehmertum.png"></a>&nbsp; <a href="http://www.tum.de"><img src="/theme/img/tum.png" width="100px"></a>&nbsp;&nbsp; <a href="http://www.vt.bgu.tum.de"><img src="/theme/img/tumvt.png" width="75px"></a>&nbsp; <a href="http://gr-m.de"><img src="/theme/img/regiom.png"></a>&nbsp; <a href="http://www.munichnetwork.com"><img src="/theme/img/munichnetwork.gif"></a>&nbsp;&nbsp;<a href="http://www.its-bavaria.de"><img width="150px" src="/theme/img/itsbavaria.svg" onerror="this.onerror=null; this.src='/theme/img/itsbavaria.png'"></a></p><br>
+                <p>Our thanks to our supporters and partners:</p>
+                <p style="max-width: 800px;">&nbsp; <a href="http://www.bmwi.de/"><img src="/theme/img/logo_bmwe_en.png" width="120px"></a> &nbsp;<a href="http://www.exist.de/DE"><img src="/theme/img/exist_logo_mu_rgb.png" width="120px"></a>&nbsp;<a href="http://www.esf.de"><img src="/theme/img/bma_esf_es_rgb_srweiss.png" width="120px"></a>&nbsp;&nbsp;&nbsp; <a href="http://europa.eu/index_de.htm"><img src="/theme/img/eu_links_rgb.png" width="120px"></a>&nbsp; <a href="https://www.unternehmertum.de/"><img src="/theme/img/unternehmertum.png"></a>&nbsp; <a href="http://www.tum.de"><img src="/theme/img/tum.png" width="100px"></a>&nbsp;&nbsp; <a href="http://www.vt.bgu.tum.de"><img src="/theme/img/tumvt.png" width="75px"></a>&nbsp; <a href="http://gr-m.de"><img src="/theme/img/regiom.png"></a>&nbsp; <a href="http://www.munichnetwork.com"><img src="/theme/img/munichnetwork.gif"></a>&nbsp;&nbsp;<a href="http://www.its-bavaria.de"><img width="150px" src="/theme/img/itsbavaria.svg" onerror="this.onerror=null; this.src='/theme/img/itsbavaria.png'"></a></p><br>
                 <br>
               </div>
-            </div>
+            </div> -->
             <div class="col-md-12" id="footer">
               <div class="slbox" style="padding-top: 30px;">
                 <div class="row">
                   <div class="col-md-3">
-                    <p class="small pull-left" style="text-align: left;">SMARTLANE UG (haftungsbeschränkt)<br>Metzstra&szlig;e 29a<br>81667 M&uuml;nchen<br><br>SMARTLANE, ein Projekt des EXIST-Gründungsvorhabens "Tapestry".</p>
+                    <p class="small pull-left" style="text-align: left;">SMARTLANE UG (Limited liability)<br>29a Metzstrasse<br>Munich 81667<br><br>SMARTLANE, a project from the EXIST start-up project "Tapestry"</p>
                   </div>
                   <div class="col-md-3">
-                    <p class="pull-left" style="text-align: left;"><span class="small">Tel. +49.89.289.22442<br><br>Kontaktieren Sie uns: &nbsp;</span><a class="fa fa-envelope" href="mailto:info@smartlane.de"  ></a> <a class="fa fa-twitter" href="http://twitter.com/smartlanedata"  ></a> <a class="fa fa-facebook-square" href="http://facebook.com/smartlanedata"  ></a></p>
+                    <p class="pull-left" style="text-align: left;"><span class="small">Tel. +49 89 2892 2442<br><br>Contact us: &nbsp;</span><a class="fa fa-envelope" href="mailto:info@smartlane.de"  ></a> <a class="fa fa-twitter" href="http://twitter.com/smartlanedata"  ></a> <a class="fa fa-facebook-square" href="http://facebook.com/smartlanedata"  ></a></p>
                   </div>
                   <div class="col-md-3">
                     &nbsp;
                   </div>
                   <div class="col-md-3">
-                    <p id="impressum-menu-li" class="pull-right"><a href="/en/impressum">Impressum</a></li>
+                    <p id="impressum-menu-li" class="pull-right"><a href="/en/impressum">Legal</a></li>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" style="top: 10px;">
+                    <p>Our thanks to our supporters and partners:</p>
+                    <p>&nbsp; <a href="http://www.bmwi.de/"><img src="/theme/img/logo_bmwe_en.png" width="110px"></a> &nbsp;<a href="http://www.exist.de/DE"><img src="/theme/img/exist_logo_mu_rgb.png" width="100px"></a>&nbsp;<a href="http://www.esf.de"><img src="/theme/img/bma_esf_es_rgb_srweiss.png" width="100px"></a>&nbsp;&nbsp;&nbsp; <a href="http://europa.eu/index_de.htm"><img src="/theme/img/eu_links_rgb.png" width="100px"></a>&nbsp; <a href="https://www.unternehmertum.de/"><img src="/theme/img/unternehmertum.png"></a>&nbsp; <a href="http://www.tum.de"><img src="/theme/img/tum.png" width="75px"></a>&nbsp;&nbsp; <a href="http://www.vt.bgu.tum.de"><img src="/theme/img/tumvt.png" width="50px"></a>&nbsp; <a href="http://gr-m.de"><img src="/theme/img/regiom.png"></a>&nbsp; <a href="http://www.munichnetwork.com"><img src="/theme/img/munichnetwork.gif" width="120px"></a>&nbsp;&nbsp;<a href="http://www.its-bavaria.de"><img width="150px" src="/theme/img/itsbavaria.svg" onerror="this.onerror=null; this.src='/theme/img/itsbavaria.png'"></a></p><br>
                   </div>
                 </div>
               </div>
@@ -201,15 +260,74 @@
     <script>
       //window.console || (window.console = { 'log': alert });
       $(function () {
-      
-      // Add conditional classname based on support
-      ////$('html').addClass($.fn.details.support ? 'details' : 'no-details');
-      
-      
-      
-      // Emulate <details> where necessary and enable open/close event handlers
-      ////$('details').details();
+$(document).ready(function () {
+  //rotation speed and timer
+  var speed = 6000;
+  
+  var run = setInterval(rotate, speed);
+  var slides = $('.slide');
+  var container = $('#slides ul');
+  var elm = container.find(':first-child').prop("tagName");
+  var item_width = container.width();
+  var previous = 'prev'; //id of previous button
+  var next = 'next'; //id of next button
+  slides.width(item_width); //set the slides to the correct pixel width
+  container.parent().width(item_width);
+  container.width(slides.length * item_width); //set the slides container to the correct total width
+  container.find(elm + ':first').before(container.find(elm + ':last'));
+  resetSlides();
+  
+  
+  //if user clicked on prev button
+  
+  $('#buttons a').click(function (e) {
+    //slide the item
+    
+    if (container.is(':animated')) {
+      return false;
+    }
+    if (e.target.id == previous) {
+      container.stop().animate({
+        'left': 0
+      }, 2500, function () {
+        container.find(elm + ':first').before(container.find(elm + ':last'));
+        resetSlides();
       });
+    }
+    
+    if (e.target.id == next) {
+      container.stop().animate({
+        'left': item_width * -2
+      }, 2500, function () {
+        container.find(elm + ':last').after(container.find(elm + ':first'));
+        resetSlides();
+      });
+    }
+    
+    //cancel the link behavior      
+    return false;
+    
+  });
+  
+
+  
+  
+  function resetSlides() {
+    //and adjust the container so current is in the frame
+    container.css({
+      'left': -1 * item_width
+    });
+  }
+  
+});
+//a simple function to click next link
+//a timer will call this function, and the rotation will begin
+
+function rotate() {
+  $('#next').click();
+}
+
+});
     </script>
    </body>
 </html>

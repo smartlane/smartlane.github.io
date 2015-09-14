@@ -39,6 +39,31 @@
       /* .no-details details > summary:before { float: left; width: 20px; content: '► '; }
       .no-details details.open > summary:before { content: '▼ '; } */
       .no-details details summary { display: block; }
+      
+      #slides {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  top: 80px;
+}
+
+#slides ul {
+  list-style: none;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 80px;
+}
+
+#slides li {
+  height: 250px;
+  float: left;
+  text-align: left;
+  position: relative;
+  top: 80px;
+}
+
     </style>
   </head>
   <body data-spy="scroll">
@@ -225,15 +250,74 @@ if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jque
     <script>
       //window.console || (window.console = { 'log': alert });
       $(function () {
-      
-      // Add conditional classname based on support
-      ////$('html').addClass($.fn.details.support ? 'details' : 'no-details');
-      
-      
-      
-      // Emulate <details> where necessary and enable open/close event handlers
-      ////$('details').details();
+$(document).ready(function () {
+  //rotation speed and timer
+  var speed = 6000;
+  
+  var run = setInterval(rotate, speed);
+  var slides = $('.slide');
+  var container = $('#slides ul');
+  var elm = container.find(':first-child').prop("tagName");
+  var item_width = container.width();
+  var previous = 'prev'; //id of previous button
+  var next = 'next'; //id of next button
+  slides.width(item_width); //set the slides to the correct pixel width
+  container.parent().width(item_width);
+  container.width(slides.length * item_width); //set the slides container to the correct total width
+  container.find(elm + ':first').before(container.find(elm + ':last'));
+  resetSlides();
+  
+  
+  //if user clicked on prev button
+  
+  $('#buttons a').click(function (e) {
+    //slide the item
+    
+    if (container.is(':animated')) {
+      return false;
+    }
+    if (e.target.id == previous) {
+      container.stop().animate({
+        'left': 0
+      }, 2500, function () {
+        container.find(elm + ':first').before(container.find(elm + ':last'));
+        resetSlides();
       });
+    }
+    
+    if (e.target.id == next) {
+      container.stop().animate({
+        'left': item_width * -2
+      }, 2500, function () {
+        container.find(elm + ':last').after(container.find(elm + ':first'));
+        resetSlides();
+      });
+    }
+    
+    //cancel the link behavior      
+    return false;
+    
+  });
+  
+
+  
+  
+  function resetSlides() {
+    //and adjust the container so current is in the frame
+    container.css({
+      'left': -1 * item_width
+    });
+  }
+  
+});
+//a simple function to click next link
+//a timer will call this function, and the rotation will begin
+
+function rotate() {
+  $('#next').click();
+}
+
+});
     </script>
 <script>
 //Manual menu highlighting
