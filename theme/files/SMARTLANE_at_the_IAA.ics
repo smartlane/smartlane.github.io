@@ -1,0 +1,115 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//www.marudot.com//iCal Event Maker
+X-WR-CALNAME:SMARTLANE at the IAA
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-1411441563@marudot.com
+DTSTART;TZID="Europe/Berlin":20150915T133000
+DTEND;TZID="Europe/Berlin":20150915T150000
+SUMMARY:90s Startup Pitch
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:Hear Monja tell you in just 90s how SMARTLANE can transform your business.
+LOCATION:IAA\, Startup Zone
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:90s Startup Pitch
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-425750113@marudot.com
+DTSTART;TZID="Europe/Berlin":20150915T173000
+DTEND;TZID="Europe/Berlin":20150915T174500
+SUMMARY:Technology & Big Data - Brief Info
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:Hear Florian give a short talk all about SMARTLANE and what it can offer to improve your mobility management.
+LOCATION:IAA\, Multimodal Market Hall
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Technology & Big Data - Brief Info
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-801781928@marudot.com
+DTSTART;TZID="Europe/Berlin":20150916T093000
+DTEND;TZID="Europe/Berlin":20150916T104000
+SUMMARY:90s Startup Pitch (Press Conference)
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:Monja pitches to the press what SMARTLANE has to offer
+LOCATION:IAA\, Startup Zone
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:90s Startup Pitch (Press Conference)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-512061034@marudot.com
+DTSTART;TZID="Europe/Berlin":20150917T163000
+DTEND;TZID="Europe/Berlin":20150917T170000
+SUMMARY:(TBC) Pitch (Making Cities smarter)
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:How can SMARTLANE make cities smarter? We'll tell you how (note: to be confirmed).
+LOCATION:IAA\, Startup Zone
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:(TBC) Pitch (Making Cities smarter)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-468367042@marudot.com
+DTSTART;TZID="Europe/Berlin":20150918T170000
+DTEND;TZID="Europe/Berlin":20150918T173000
+SUMMARY:Sustainable Mobility through digital solutions (hosted by German Partnership for Sustainable Mobility)
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:Florian will join Innoz\, Moovel and Ally on a discussion panel exploring how digital solutions can make mobility more sustainable.
+LOCATION:IAA\, Multimodal Market Hall
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Sustainable Mobility through digital solutions (hosted by German Partnership for Sustainable Mobility)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20150915T095139Z
+UID:20150915T095139Z-865314569@marudot.com
+DTSTART;TZID="Europe/Berlin":20150923T150000
+DTEND;TZID="Europe/Berlin":20150923T153000
+SUMMARY:Big Data supporting Mobility
+URL:http%3A%2F%2Fwww.smartlane.de%2Fsmartlane-at-iaa-programme.html
+DESCRIPTION:Mathias will talk about the relevancy of big data in today's mobility management.
+LOCATION:IAA\, Multimodal Market Hall
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Big Data supporting Mobility
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

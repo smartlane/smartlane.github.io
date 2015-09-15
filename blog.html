@@ -39,31 +39,6 @@
       /* .no-details details > summary:before { float: left; width: 20px; content: '► '; }
       .no-details details.open > summary:before { content: '▼ '; } */
       .no-details details summary { display: block; }
-      
-      #slides {
-  overflow: hidden;
-  position: relative;
-  height: 500px;
-  top: 80px;
-}
-
-#slides ul {
-  list-style: none;
-  height: 250px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: 80px;
-}
-
-#slides li {
-  height: 250px;
-  float: left;
-  text-align: left;
-  position: relative;
-  top: 80px;
-}
-
     </style>
   </head>
   <body data-spy="scroll">
@@ -93,10 +68,15 @@
 <br>
 <h1>Blog</h1>
     <div style="text-align: right; position: relative;">
-      <div style="max-width: 60%; text-align: left;  position: absolute; bottom: 0; left:0;">Di 14 Juli 2015: <span style="font-size: 2em;">&nbsp;<a href="/smartlane-at-db-infra.html">SMARTLANE takes part in DB Infrastructure Accelerator Challenge</a></span></div>
-<img class="padded-image" style="vertical-align: text-bottom; width: 40%;" src="https://s3.eu-central-1.amazonaws.com/smartlanewebsitestatic/db_pitch.jpg" />    </div>
+      <div style="padding: 30px; max-width: 60%; text-align: left;  position: absolute; bottom: 0; left:0;">2015-09-15: <span style="font-size: 2em;">&nbsp;<a href="/smartlane-at-iaa-programme.html">SMARTLANE at the IAA this week</a></span></div>
+<img class="padded-image" style="vertical-align: text-bottom; width: 40%;" src="/theme/img/iaa_stand.jpg" />    </div>
     </div>
-        <div class="slbox">
+        <div style="padding-bottom: 30px; padding-top: 45px; background: #e3e3e3;" class="slbox">
+    <div style="text-align: left; position: relative;">
+<img class="padded-image" style="vertical-align: text-bottom; width: 40%;" src="https://s3.eu-central-1.amazonaws.com/smartlanewebsitestatic/db_pitch.jpg" />      <div style="padding: 30px; max-width: 60%; text-align: left;  position: absolute; bottom: 0; right:0;">2015-07-14: <span style="font-size: 2em;">&nbsp;<a href="/smartlane-at-db-infra.html">SMARTLANE takes part in DB Infrastructure Accelerator Challenge</a></span></div>
+    </div>
+    </div>
+        <div style="padding-bottom: 30px; padding-top: 45px; " class="slbox gray">
           </div>
         </div>
       </div>
@@ -111,74 +91,15 @@
     <script>
       //window.console || (window.console = { 'log': alert });
       $(function () {
-$(document).ready(function () {
-  //rotation speed and timer
-  var speed = 6000;
-  
-  var run = setInterval(rotate, speed);
-  var slides = $('.slide');
-  var container = $('#slides ul');
-  var elm = container.find(':first-child').prop("tagName");
-  var item_width = container.width();
-  var previous = 'prev'; //id of previous button
-  var next = 'next'; //id of next button
-  slides.width(item_width); //set the slides to the correct pixel width
-  container.parent().width(item_width);
-  container.width(slides.length * item_width); //set the slides container to the correct total width
-  container.find(elm + ':first').before(container.find(elm + ':last'));
-  resetSlides();
-  
-  
-  //if user clicked on prev button
-  
-  $('#buttons a').click(function (e) {
-    //slide the item
-    
-    if (container.is(':animated')) {
-      return false;
-    }
-    if (e.target.id == previous) {
-      container.stop().animate({
-        'left': 0
-      }, 2500, function () {
-        container.find(elm + ':first').before(container.find(elm + ':last'));
-        resetSlides();
+      
+      // Add conditional classname based on support
+      ////$('html').addClass($.fn.details.support ? 'details' : 'no-details');
+      
+      
+      
+      // Emulate <details> where necessary and enable open/close event handlers
+      ////$('details').details();
       });
-    }
-    
-    if (e.target.id == next) {
-      container.stop().animate({
-        'left': item_width * -2
-      }, 2500, function () {
-        container.find(elm + ':last').after(container.find(elm + ':first'));
-        resetSlides();
-      });
-    }
-    
-    //cancel the link behavior      
-    return false;
-    
-  });
-  
-
-  
-  
-  function resetSlides() {
-    //and adjust the container so current is in the frame
-    container.css({
-      'left': -1 * item_width
-    });
-  }
-  
-});
-//a simple function to click next link
-//a timer will call this function, and the rotation will begin
-
-function rotate() {
-  $('#next').click();
-}
-
-});
     </script>
 <script>
 //Manual menu highlighting
