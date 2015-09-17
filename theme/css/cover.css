@@ -178,8 +178,8 @@ table {
 }
 
 .slbox {
-    background: #ffffff;
-    /* background: rgba(255,255,255,.90); */
+    /* background: #ffffff;
+       background: rgba(255,255,255,.90); */
     padding-bottom: 75px;
     padding-right: 20px;
     padding-left: 20px;
@@ -206,8 +206,8 @@ table {
 }
 
 .gray {
-    background: #ffffff;
-    background: rgba(255,255,255,.80);
+    /* background: #ffffff;
+       background: rgba(255,255,255,.80); */
 }
 
 .slbox > h1 {
@@ -387,7 +387,7 @@ padding: 15px 15px 15px 15px;
 }
 
 /* Pelican */
-.entry-content > p {
+.entry-content > p, ul {
    width: 1170px;
   text-align: left;
 margin: 0 auto;
