@@ -37,6 +37,18 @@ hr {
   border: 1px solid #fff;
 }
 
+.breaktext {
+  -webkit-hyphens: manual;
+   -moz-hyphens: manual;
+    -ms-hyphens: manual;
+        hyphens: manual;
+
+     /* Non standard for webkit, thank you https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/ */
+     word-break: break-word;
+
+
+}
+
 .btn {
   border: 0px;
   background: #999;
