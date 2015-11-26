@@ -2,17 +2,31 @@
  * Globals
  */
 
+.nav>li>a {
+  color: #333333;
+}
+
 /* Links */
 a,
 a:focus,
 a:hover {
-  color: #333333;
+  color: #e35d21;
 }
-
+/*
 a.fa,
 a.fa:focus,
 a.fa:hover {
   color: #e35d21;
+}
+*/
+a.bloglink,
+a.bloglink:focus,
+a.bloglink:hover {
+  color: #333333;
+}
+
+h2.entry-title {
+  color: #333333;
 }
 
 .col-md-12 {

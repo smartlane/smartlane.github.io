@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Legal</title>
+    <title>Uploading Data to the SMARTLANE Platform</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1300">
@@ -106,31 +106,71 @@
         </nav>
         <div class="cover-container">
           <div class="inner cover">
-    Translations: 
-<a href="/en/../impressum">de</a>
-
+    
 <br>
-<div class="slbox gray">
-<h1>Legal</h1>
-    <h2>Responsible person according to § 5 of the TMG:</h2>
-<p>Smartlane UG (Limited liability)<br>
-29a Metzstrasse<br>
-Munich 81667<br></p>
-<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#115;&#109;&#97;&#114;&#116;&#108;&#97;&#110;&#101;&#46;&#100;&#101;">&#105;&#110;&#102;&#111;&#64;&#115;&#109;&#97;&#114;&#116;&#108;&#97;&#110;&#101;&#46;&#100;&#101;</a></p>
-<h2>Privacy</h2>
-<p>We use Google Analytics. However, we have configured it specially to <strong>not</strong> use cookies.</p>
-<p><br>
-The following disclaimer is provided in German:</p>
-<h2>Haftungsausschluss</h2>
-<h3>Haftung für Inhalte</h3>
-<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-<h3>Haftung für Links</h3>
-<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
-<h3>Urheberrecht</h3>
-<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
-<p><em>Source material: <a href="http://www.e-recht24.de/muster-disclaimer.html">eRecht24 Disclaimer</a></em></p>
-<h2>Credits</h2>
-<p>This website is built on <a href="http://getbootstrap.com">Bootstrap</a> and with <a href="http://getpelican.com/">Pelican</a>. We started with the <em>Cover</em> template from <a href="https://twitter.com/mdo">@mdo</a>. Icons are from <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.elegantthemes.com" title="Elegant Themes">Elegant Themes</a>, <a href="http://yanlu.de" title="Yannick">Yannick</a>, <a href="http://www.rivolta.es" title="Situ Herrera">Situ Herrera</a>, <a href="http://www.simpleicon.com" title="SimpleIcon">SimpleIcon</a>, <a href="http://www.icons8.com" title="Icons8">Icons8</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> with <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a> License and <a href="http://fontawesome.io">Font Awesome</a> from Dave Gandy. Our sliding text was created based on <a href="http://www.jqueryscript.net/rotator/Simple-Text-Slider-Rotator-with-jQuery-CSS">this demonstration</a>.</p>
+<div class="slbox gray"> 
+<div style ="text-align: left;">
+<h1>Uploading Data to the SMARTLANE Platform</h1>
+    <h2>Introduction</h2>
+<p>This page assumes you are comfortable with the concepts of datasets (collections of resources) and resources on <a href="">http://smartlane.io</a>. Important to note is that resources can take various forms: they can be a very thin link to an external service, they can be a description of a constant collection and processing of an external service, or they can be actual tables of data.</p>
+<p>SMARTLANE provides multiple ways of getting data into the platform:</p>
+<ul>
+<li>Upload</li>
+<li>Leave it to us</li>
+<li>HTTP API</li>
+<li>Streaming</li>
+</ul>
+<h3>Upload</h3>
+<p>When creating or editing a resource, you can upload files. If these are in popular tabular formats (e.g. CSV, XLS...), they will be translated to queryable database tables.</p>
+<h3>Leave it to us</h3>
+<p>If you already have an API, just enter it in the resource creation page and check the "Accumulate" option. We'll take care of the rest. This option is also good for sources from the MDM (Mobilitätsdatenmarktplatz), as they require a specialized connection prior to download which we can arrange behind the scenes.</p>
+<p><PICTURE CKAN></p>
+<h3>HTTP API</h3>
+<p>Using your API key, which you can find under your account settings (e.g. https://smartlane.io/user/edit/joebloggs), you can insert records into a datastore-enabled resource. If you created a resource by uploading tabular data (see above), your resource is already datastore-enabled. Otherwise you first need to create a datastore-enabled resource using an API call:</p>
+<div class="highlight"><pre><span class="n">Endpoint</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">smartlane</span><span class="o">.</span><span class="na">io</span><span class="sr">/api/3/action/</span><span class="n">datastore_create</span> <span class="o">(</span><span class="n">POST</span><span class="o">)</span>
+<span class="n">Headers</span><span class="o">:</span>  <span class="n">Authorization</span><span class="o">:</span> <span class="n">API_KEY</span>
+<span class="n">Body</span><span class="o">:</span>     <span class="n">JSON</span> <span class="k">in</span> <span class="n">following</span> <span class="n">format</span><span class="o">:</span>
+          <span class="o">{</span>
+            <span class="s2">&quot;force&quot;</span><span class="o">:</span><span class="s2">&quot;true&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;resource&quot;</span><span class="o">:</span> <span class="o">{</span><span class="s2">&quot;package_id&quot;</span><span class="o">:</span> <span class="s2">&quot;DATASET ID&quot;</span><span class="o">},</span>
+            <span class="s2">&quot;primary_key&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;name&quot;</span><span class="o">],</span>
+            <span class="s2">&quot;fields&quot;</span><span class="o">:</span>
+              <span class="o">[</span>
+                <span class="o">{</span>
+                  <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;field1&quot;</span><span class="o">,</span>
+                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;one of text, json, date, time, timestamp, int, float, bool&quot;</span>
+                <span class="o">},</span>
+                <span class="o">...</span> <span class="n">further</span> <span class="n">fields</span> <span class="o">...</span>
+              <span class="o">]</span>
+          <span class="o">}</span>
+</pre></div>
+
+
+<p>Once you've done that, you can insert records with further calls:</p>
+<div class="highlight"><pre><span class="n">Endpoint</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">smartlane</span><span class="o">.</span><span class="na">io</span><span class="sr">/api/3/action/</span><span class="n">datastore_upsert</span> <span class="o">(</span><span class="n">POST</span><span class="o">)</span>
+<span class="n">Headers</span><span class="o">:</span>  <span class="n">Authorization</span><span class="o">:</span> <span class="n">API_KEY</span>
+<span class="n">Body</span><span class="o">:</span>     <span class="n">JSON</span> <span class="k">in</span> <span class="n">following</span> <span class="n">format</span><span class="o">:</span>
+          <span class="o">{</span>
+            <span class="s2">&quot;force&quot;</span><span class="o">:</span><span class="s2">&quot;true&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;resource_id&quot;</span><span class="o">:</span> <span class="s2">&quot;RESOURCE ID&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;records&quot;</span><span class="o">:</span>
+              <span class="o">[</span>
+                <span class="o">{</span>
+                  <span class="s2">&quot;field1&quot;</span><span class="o">:</span> <span class="n">value</span><span class="o">,</span>
+                  <span class="s2">&quot;field2&quot;</span><span class="o">:</span> <span class="s2">&quot;quoted_value&quot;</span><span class="o">,</span>
+                  <span class="s2">&quot;field3&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="o">,</span>
+                  <span class="s2">&quot;a_time_field&quot;</span><span class="o">:</span> <span class="s2">&quot;2015-10-26 08:20:00&quot;</span>
+                <span class="o">}</span>
+              <span class="o">]</span>
+          <span class="o">}</span>
+</pre></div>
+
+
+<p>For more details on using the API, see our <a href="../api/">API page</a>.</p>
+<h3>Streaming</h3>
+<p>If your data is event based and/or very frequently updated, perhaps from multiple sources, or if you currently write data to a relational database, you can stream all events or changes within the database directly to us. Currently we support the <a href="https://github.com/pyr/recordbus">recordbus</a> project for MySQL, but if you are familiar with <a href="http://kafka.apache.org/">Apache Kafka</a>, you can write a producer for your system using one of the many <a href="https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-For0.8.x">Client Frameworks</a> and register it with our broker at kafka.smartlane.io, port 9092. Please note that only authorized IPs can perform this action - contact us at <a href="mailto:support@smartlane.de">support@smartlane.de</a> to get started.</p>
+<p>For more details on setting up recordbus, see our <a href="../mysql">page on MySQL replication</a>.</p>
+    </div>
     </div>
           </div>
         </div>
@@ -220,7 +260,7 @@ function rotate() {
 <script>
 //Manual menu highlighting
 $("#home-menu-li").removeClass("active");
-$("#impressum-menu-li").addClass("active");
+$("#uploadingdata-menu-li").addClass("active");
 </script>
   </body>
 </html>
