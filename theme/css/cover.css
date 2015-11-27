@@ -29,6 +29,13 @@ h2.entry-title {
   color: #333333;
 }
 
+/* This allows in page linking with the fixed header */
+h2 span { 
+  margin-top: -160px;       /* Size of fixed header */
+  padding-bottom: 160px; 
+  display: block; 
+}
+
 .col-md-12 {
   top: 135px;
 }

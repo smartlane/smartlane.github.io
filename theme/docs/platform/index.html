@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Uploading Data to the SMARTLANE Platform</title>
+    <title>SMARTLANE Platform</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1300">
@@ -110,69 +110,25 @@
 <br>
 <div class="slbox gray"> 
 <div style ="text-align: left;">
-<h1>Uploading Data to the SMARTLANE Platform</h1>
+<h1>SMARTLANE Platform</h1>
     <h2>Introduction</h2>
-<p>This page assumes you are comfortable with the concepts of datasets (collections of resources) and resources on <a href="">http://smartlane.io</a>. Important to note is that resources can take various forms: they can be a very thin link to an external service, they can be a description of a constant collection and processing of an external service, or they can be actual tables of data.</p>
-<p>SMARTLANE provides multiple ways of getting data into the platform:</p>
-<ul>
-<li>Upload</li>
-<li>Leave it to us</li>
-<li>HTTP API</li>
-<li>Streaming</li>
-</ul>
-<h2>Upload</h2>
-<p>When creating or editing a resource, you can upload files. If these are in popular tabular formats (e.g. CSV, XLS...), they will be translated to queryable database tables.</p>
-<h2><span id="accumulate">&nbsp;</span>Leave it to us</h2>
-
-<p>If you already have an API, just enter it in the resource creation page and check the "Accumulate" option. We'll take care of the rest. This option is also good for sources from the MDM (Mobilitätsdatenmarktplatz), as they require a specialized connection prior to download which we can arrange behind the scenes.</p>
-<p><PICTURE CKAN></p>
-<h2><span id="httpapi">&nbsp;</span>HTTP API</h2>
-
-<p>Using your API key, which you can find under your account settings (e.g. https://smartlane.io/user/edit/joebloggs), you can insert records into a datastore-enabled resource. If you created a resource by uploading tabular data (see above), your resource is already datastore-enabled. Otherwise you first need to create a datastore-enabled resource using an API call:</p>
-<div class="highlight"><pre><span class="n">Endpoint</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">smartlane</span><span class="o">.</span><span class="na">io</span><span class="sr">/api/3/action/</span><span class="n">datastore_create</span> <span class="o">(</span><span class="n">POST</span><span class="o">)</span>
-<span class="n">Headers</span><span class="o">:</span>  <span class="n">Authorization</span><span class="o">:</span> <span class="n">API_KEY</span>
-<span class="n">Body</span><span class="o">:</span>     <span class="n">JSON</span> <span class="k">in</span> <span class="n">following</span> <span class="n">format</span><span class="o">:</span>
-          <span class="o">{</span>
-            <span class="s2">&quot;force&quot;</span><span class="o">:</span><span class="s2">&quot;true&quot;</span><span class="o">,</span>
-            <span class="s2">&quot;resource&quot;</span><span class="o">:</span> <span class="o">{</span><span class="s2">&quot;package_id&quot;</span><span class="o">:</span> <span class="s2">&quot;DATASET ID&quot;</span><span class="o">},</span>
-            <span class="s2">&quot;primary_key&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;name&quot;</span><span class="o">],</span>
-            <span class="s2">&quot;fields&quot;</span><span class="o">:</span>
-              <span class="o">[</span>
-                <span class="o">{</span>
-                  <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;field1&quot;</span><span class="o">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;one of text, json, date, time, timestamp, int, float, bool&quot;</span>
-                <span class="o">},</span>
-                <span class="o">...</span> <span class="n">further</span> <span class="n">fields</span> <span class="o">...</span>
-              <span class="o">]</span>
-          <span class="o">}</span>
-</pre></div>
-
-
-<p>Once you've done that, you can insert records with further calls:</p>
-<div class="highlight"><pre><span class="n">Endpoint</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">smartlane</span><span class="o">.</span><span class="na">io</span><span class="sr">/api/3/action/</span><span class="n">datastore_upsert</span> <span class="o">(</span><span class="n">POST</span><span class="o">)</span>
-<span class="n">Headers</span><span class="o">:</span>  <span class="n">Authorization</span><span class="o">:</span> <span class="n">API_KEY</span>
-<span class="n">Body</span><span class="o">:</span>     <span class="n">JSON</span> <span class="k">in</span> <span class="n">following</span> <span class="n">format</span><span class="o">:</span>
-          <span class="o">{</span>
-            <span class="s2">&quot;force&quot;</span><span class="o">:</span><span class="s2">&quot;true&quot;</span><span class="o">,</span>
-            <span class="s2">&quot;resource_id&quot;</span><span class="o">:</span> <span class="s2">&quot;RESOURCE ID&quot;</span><span class="o">,</span>
-            <span class="s2">&quot;records&quot;</span><span class="o">:</span>
-              <span class="o">[</span>
-                <span class="o">{</span>
-                  <span class="s2">&quot;field1&quot;</span><span class="o">:</span> <span class="n">value</span><span class="o">,</span>
-                  <span class="s2">&quot;field2&quot;</span><span class="o">:</span> <span class="s2">&quot;quoted_value&quot;</span><span class="o">,</span>
-                  <span class="s2">&quot;field3&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="o">,</span>
-                  <span class="s2">&quot;a_time_field&quot;</span><span class="o">:</span> <span class="s2">&quot;2015-10-26 08:20:00&quot;</span>
-                <span class="o">}</span>
-              <span class="o">]</span>
-          <span class="o">}</span>
-</pre></div>
-
-
-<p>For more details on using the API, see our <a href="../api/">API page</a>.</p>
-<h2><span id="streaming">&nbsp;</span>Streaming</h2>
-
-<p>If your data is event based and/or very frequently updated, perhaps from multiple sources, or if you currently write data to a relational database, you can stream all events or changes within the database directly to us. Currently we support the <a href="https://github.com/pyr/recordbus">recordbus</a> project for MySQL, but if you are familiar with <a href="http://kafka.apache.org/">Apache Kafka</a>, you can write a producer for your system using one of the many <a href="https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-For0.8.x">Client Frameworks</a> and register it with our broker at kafka.smartlane.io, port 9092. Please note that only authorized IPs can perform this action - contact us at <a href="mailto:support@smartlane.de">support@smartlane.de</a> to get started.</p>
-<p>For more details on setting up recordbus, see our <a href="../mysql">page on MySQL replication</a>.</p>
+<p>This page gives a technical overview of the SMARTLANE platform. The goal is to provide an explanation of what the platform can do and can facilitate in technical terms for customers wishing to integrate Smartlane's services into their business.</p>
+<h2>Architecture and overview</h2>
+<p>The graphic below shows the components that make up the platform.</p>
+<p><img src="/theme/img/platform.svg" width="100%" /></p>
+<h3>Data gathering and archiving</h3>
+<p>The lower section of the graphic shows various methods of <a href="../uploadingdata/">bringing data into the platform</a>. Data can be regularly pulled from external services either to ascertain the current status or to <a href="../uploadingdata/#accumulate">accumulate (archive) data</a> for later analysis. Triggers can also be used to provide initial processing of such data, for example to detect changes and only save those for later use as events. You can also push data to the platform using our <a href="../uploadingdata/#httpapi">HTTP API</a> which is convenient for devices or apps wanting to send data to the platform. For large amounts of frequently changing data, or for synchronization with your own databases, we can <a href="../uploadingdata/#streaming">harvest data using streaming</a>. <a href="mailto:support@smartlane.de">Get in touch</a> to find out what is the most suitable approach for your system.</p>
+<p>TODO, at some point, connection to sensor providers.... ?</p>
+<h3>Data and App management</h3>
+<p>We use an extended version of the <a href="http://www.ckan.org/">CKAN Data cataloging software</a> for providing you with an overview of what data is in the platform and what is being done with it. Customers receive a login for either the shared <a href="https://smartlane.io">smartlane.io</a> platform or a private, e.g. yourbusinessnamehere.smartlane.io, instance. Here you can manage data uploads, scheduled data pulls from APIs, connected apps and so on.</p>
+<h3>Querying</h3>
+<p>Apps built on the SMARTLANE platform can take advantage of high performance querying of multiple, integrated data sources thanks to powerful geospatial and temporal querying. Our app development usually takes place in JavaScript, but this querying can take place using any programming language that supports HTTP requests.</p>
+<h3>Mobility Intelligence Engine</h3>
+<p>TODO: Mobility Intelligence, Machine Learning, Machine Intelligence.... ?????</p>
+<p>Utilizing highly performant parallel and in-memory data processing techniques, SMARTLANE provides an engine for developing powerful explanation and prediction algorithms for the mobility domain. This relies both on the efficient access to large amounts of integrated data described above and on the mobility expertise of our data science team. Learning models allow apps to not only rely on current and historical data but also use predictions about the future, for example planning a delivery route based on the likely traffic situation tomorrow at 5pm or recommending a parking space for Friday's commute. We can integrate and parallelize your existing techniques and models into the platform - this is especially easy if they're already coded in Python, Java or Scala.</p>
+<p>TODO: How much?</p>
+<h3>Routing</h3>
+<p>We provide an extended version of the <a href="https://graphhopper.com/">GraphHopper directions API</a> (routing engine) for routing requests. This makes it possible not only to plan the quickest routes in general but also dependent on current or future traffic information for the network provided from data sources and predictions.</p>
     </div>
     </div>
           </div>
@@ -263,7 +219,7 @@ function rotate() {
 <script>
 //Manual menu highlighting
 $("#home-menu-li").removeClass("active");
-$("#uploadingdata-menu-li").addClass("active");
+$("#platform-menu-li").addClass("active");
 </script>
   </body>
 </html>

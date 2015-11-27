@@ -96,10 +96,10 @@
               <li id="platform-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="/en/#platform">Product</a></li>
               <li id="smartlane-menu-li" class="pull-right  bottomaligned"><a class="scrollme" href="/en/#smartlane">Mobility Intelligence</a></li>
               <li>
-                <a style="background: #e3e3e3;" class="firstlanguagelink " href="/">de</a>
+                <a style="background: #e3e3e3; color: #333333;" class="firstlanguagelink " href="/">de</a>
               </li>
               <li>
-                <a style="background: #e3e3e3;" class="activelang" href="/en">en</a>
+                <a style="background: #e3e3e3; color: #333333;" class="activelang" href="/en">en</a>
               </li>
             </ul>
           </div>
@@ -120,12 +120,14 @@
 <li>HTTP API</li>
 <li>Streaming</li>
 </ul>
-<h3>Upload</h3>
+<h2>Upload</h2>
 <p>When creating or editing a resource, you can upload files. If these are in popular tabular formats (e.g. CSV, XLS...), they will be translated to queryable database tables.</p>
-<h3>Leave it to us</h3>
+<h2><span id="accumulate">&nbsp;</span>Leave it to us</h2>
+
 <p>If you already have an API, just enter it in the resource creation page and check the "Accumulate" option. We'll take care of the rest. This option is also good for sources from the MDM (Mobilitätsdatenmarktplatz), as they require a specialized connection prior to download which we can arrange behind the scenes.</p>
 <p><PICTURE CKAN></p>
-<h3>HTTP API</h3>
+<h2><span id="httpapi">&nbsp;</span>HTTP API</h2>
+
 <p>Using your API key, which you can find under your account settings (e.g. https://smartlane.io/user/edit/joebloggs), you can insert records into a datastore-enabled resource. If you created a resource by uploading tabular data (see above), your resource is already datastore-enabled. Otherwise you first need to create a datastore-enabled resource using an API call:</p>
 <div class="highlight"><pre><span class="n">Endpoint</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">smartlane</span><span class="o">.</span><span class="na">io</span><span class="sr">/api/3/action/</span><span class="n">datastore_create</span> <span class="o">(</span><span class="n">POST</span><span class="o">)</span>
 <span class="n">Headers</span><span class="o">:</span>  <span class="n">Authorization</span><span class="o">:</span> <span class="n">API_KEY</span>
@@ -167,7 +169,8 @@
 
 
 <p>For more details on using the API, see our <a href="../api/">API page</a>.</p>
-<h3>Streaming</h3>
+<h2><span id="streaming">&nbsp;</span>Streaming</h2>
+
 <p>If your data is event based and/or very frequently updated, perhaps from multiple sources, or if you currently write data to a relational database, you can stream all events or changes within the database directly to us. Currently we support the <a href="https://github.com/pyr/recordbus">recordbus</a> project for MySQL, but if you are familiar with <a href="http://kafka.apache.org/">Apache Kafka</a>, you can write a producer for your system using one of the many <a href="https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-For0.8.x">Client Frameworks</a> and register it with our broker at kafka.smartlane.io, port 9092. Please note that only authorized IPs can perform this action - contact us at <a href="mailto:support@smartlane.de">support@smartlane.de</a> to get started.</p>
 <p>For more details on setting up recordbus, see our <a href="../mysql">page on MySQL replication</a>.</p>
     </div>
