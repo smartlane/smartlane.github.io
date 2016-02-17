@@ -116,6 +116,28 @@ p.featureitem {
   color: #ffffff;
 }
 
+.btn-gray {
+  background: #999;
+  background-image: -webkit-linear-gradient(top, #999, #555);
+  background-image: -moz-linear-gradient(top, #999, #555);
+  background-image: -ms-linear-gradient(top, #999, #555);
+  background-image: -o-linear-gradient(top, #999, #555);
+  background-image: linear-gradient(to bottom, #999, #555);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+}
+
+.btn-gray:hover {
+  background: #555;
+  color: #ffffff;
+}
+
+.btn-gray:focus {
+  background: #555;
+  color: #ffffff;
+}
+
 /*
  * Base structure
  */
