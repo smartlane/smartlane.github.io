@@ -64,6 +64,9 @@ const PricingComponent = React.createClass({
       str = (<span>{packages[this.state.pricingpackage.id+1-1].price}&euro;</span>);
       name = packages[this.state.pricingpackage.id+1-1].name;
     }
+    else if(this.state.value < packages[0].tasks) {
+      str = (<span>{packages[0].price}&euro;</span>);
+    }
     else {
       str = (<span>{total}&euro;</span>);
     }

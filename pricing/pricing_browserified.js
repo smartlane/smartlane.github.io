@@ -90,6 +90,13 @@ var PricingComponent = _react2.default.createClass({
           '€'
         );
         name = packages[this.state.pricingpackage.id + 1 - 1].name;
+      } else if (this.state.value < packages[0].tasks) {
+        str = _react2.default.createElement(
+          'span',
+          null,
+          packages[0].price,
+          '€'
+        );
       } else {
         str = _react2.default.createElement(
           'span',
