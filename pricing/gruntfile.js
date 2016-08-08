@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'pricing_src.js',
-        dest: 'pricing_bundle.js'
+        dest: 'pricing_browserified.js'
       }
     },
     less: {
@@ -33,9 +33,21 @@ module.exports = function(grunt) {
           }
       }
     },
+    uglify: {
+      options: {
+        // the banner is inserted at the top of the output
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'pricing_bundle.js': ['pricing_browserified.js']
+        }
+      }
+    }
   });
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.registerTask("build", ["less", "concat", "browserify"]);
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.registerTask("build", ["less", "concat", "browserify", "uglify"]);
 };
