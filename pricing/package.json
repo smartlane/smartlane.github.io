@@ -1,0 +1,24 @@
+{
+  "name": "smartlanedispatch_pricing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pricing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Florian Schimandl",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.13.1",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "less": "^2.7.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-rangeslider": "^1.0.3",
+    "underscore": "^1.8.3"
+  }
+}
