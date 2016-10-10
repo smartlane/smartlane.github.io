@@ -1,3 +1,7 @@
+#validator {
+	display:none;
+}
+
 /* Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org> */
 .swagger-section pre code {
   display: block;
@@ -287,7 +291,7 @@
   color: #aaaaaa;
 }
 .swagger-section .swagger-ui-wrap a {
-  color: #547f00;
+  color: #C5C5C5;
 }
 .swagger-section .swagger-ui-wrap a img {
   border: none;
@@ -653,7 +657,7 @@
   font-style: italic;
 }
 .swagger-section .swagger-ui-wrap .markdown h3 {
-  color: #547f00;
+  color: #C5C5C5;
 }
 .swagger-section .swagger-ui-wrap .markdown h4 {
   color: #666666;
@@ -1127,7 +1131,7 @@
 }
 .swagger-section .swagger-ui-wrap p#colophon a {
   text-decoration: none;
-  color: #547f00;
+  color: #C5C5C5;
 }
 .swagger-section .swagger-ui-wrap h3 {
   color: black;
@@ -1254,7 +1258,7 @@
   font-size: 0.9em;
 }
 .swagger-section .auth_container .auth__title {
-  color: #547f00;
+  color: #C5C5C5;
   font-size: 1.2em;
 }
 .swagger-section .auth_container .basic_auth__label {
@@ -1411,7 +1415,7 @@
   cursor: pointer;
 }
 .swagger-section #header {
-  background-color: #89bf04;
+  background-color: #F5F5F5;
   padding: 9px 14px 19px 14px;
   height: 23px;
   min-width: 775px;
@@ -1445,7 +1449,7 @@
   padding: 6px 8px;
   font-size: 0.9em;
   color: white;
-  background-color: #547f00;
+  background-color: #C5C5C5;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1455,7 +1459,7 @@
 }
 .swagger-section #explore:hover,
 .swagger-section #auth_container .authorize__btn:hover {
-  background-color: #547f00;
+  background-color: #C5C5C5;
 }
 .swagger-section #header #logo {
   font-size: 1.5em;
